@@ -1,0 +1,79 @@
+Frist.lua  用于替换第一种情况代码
+第一种情况：
+		[CompilerGenerated]
+		internal  Label vmethod_34()
+		{
+			return this.label_4;
+		}
+
+
+
+Second.lua   用于替换第二种情况
+第二种情况：
+		[CompilerGenerated]
+		[MethodImpl(MethodImplOptions.Synchronized)]
+		internal void vmethod_35(Label label_5)
+		{
+			this.label_4 = label_5;
+		}
+
+
+
+Third.lua    用于替换第三种情况
+第三种情况
+		[CompilerGenerated]
+		[MethodImpl(MethodImplOptions.Synchronized)]
+		internal  void SetTV_Allocations_ByAttackersOnly(TreeView treeView_5)
+		{
+			TreeNodeMouseClickEventHandler value = new TreeNodeMouseClickEventHandler(this.TV_Allocations_ByAttackersOnly_NodeMouseDoubleClick);
+			TreeViewEventHandler value2 = new TreeViewEventHandler(this.TV_Allocations_ByAttackersOnly_AfterSelect);
+			MouseEventHandler value3 = new MouseEventHandler(this.TV_Allocations_ByAttackersOnly_MouseClick);
+			TreeView tV_Allocations_ByAttackersOnl = this.TV_Allocations_ByAttackersOnl;
+			if (tV_Allocations_ByAttackersOnl != null)
+			{
+				tV_Allocations_ByAttackersOnl.NodeMouseDoubleClick -= value;
+				tV_Allocations_ByAttackersOnl.AfterSelect -= value2;
+				tV_Allocations_ByAttackersOnl.MouseClick -= value3;
+			}
+			this.TV_Allocations_ByAttackersOnl = treeView_5;
+			tV_Allocations_ByAttackersOnl = this.TV_Allocations_ByAttackersOnl;
+			if (tV_Allocations_ByAttackersOnl != null)
+			{
+				tV_Allocations_ByAttackersOnl.NodeMouseDoubleClick += value;
+				tV_Allocations_ByAttackersOnl.AfterSelect += value2;
+				tV_Allocations_ByAttackersOnl.MouseClick += value3;
+			}
+		}
+
+
+
+KnowNameFrist.lua         用于替换更改过函数名的第一种情况
+
+KnowNameSecond.lua        用于替换更改过函数名的第二种情况
+
+KnowNameThird.lua         用于替换更改过函数名的第三种情况
+
+
+
+脚本目前设置为替换单个指定文件对（.cs 和 .designer.cs）
+代码如下：
+function main()
+	local path = "E:\\Command\\CommandX\\Source 2.0\\CommandX\\Command\\AttackTarget.cs"
+	local path2 = "E:\\Command\\CommandX\\Source 2.0\\CommandX\\Command\\AttackTarget.Designer.cs"
+	repalceFile(path,path2)
+end
+
+如果想通过遍历文件夹来替换所有文件对，可将该函数改为
+function main()
+	roadFilePath("E:\\Command\\CommandX\\Source 2.0\\CommandX") --
+	for key,value in pairs(pathTab) do
+		justonce = 0
+		repalceFile(path,path2)
+		dicTab = {}
+	end
+end
+
+
+
+文档创建人：zhangli   时间：2017.11.10
+

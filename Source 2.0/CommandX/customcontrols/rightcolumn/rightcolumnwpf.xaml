@@ -1,0 +1,72 @@
+<UserControl
+	x:Class="Command.RightColumnWPF" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:Command" xmlns:odc="clr-namespace:Odyssey.Controls;assembly=Odyssey" xmlns:Custom="http://schemas.odyssey.com/wpf" xmlns:Custom1="http://metro.mahapps.com/winfx/xaml/controls"
+	VerticalAlignment="Top"
+	VerticalContentAlignment="Top">
+	<ScrollViewer
+		Name="MyScrollViewer"
+		VerticalScrollBarVisibility="Disabled"
+		VerticalAlignment="Top"
+		VerticalContentAlignment="Top">
+		<Grid
+			Name="MyGrid">
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Name="RowDefinition_UsedSpace"
+					Height="auto" />
+				<RowDefinition
+					Name="RowDefinition_ExtraSpace"
+					Height="*" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Name="ColumnDefinition_UsedSpace" />
+			</Grid.ColumnDefinitions>
+			<StackPanel
+				Name="StackPanel_Main"
+				LayoutUpdated="StackPanel_Main_LayoutUpdated">
+				<odc:OdcExpander
+					Name="Expander_UnitStatus"
+					Header="作战单元状态"
+					Margin="0"
+					Expanded="Expander_UnitStatus_Expanded">
+					<local:UnitStatus_WPF
+						x:Name="WPFControl_UnitStatus" />
+				</odc:OdcExpander>
+				<odc:OdcExpander
+					Name="Expander_UnitWeapons"
+					Header="作战单元武器"
+					Margin="0"
+					Expanded="Expander_UnitWeapons_Expanded">
+					<local:UnitWeapons_WPF
+						x:Name="WPFControl_UnitWeapons" />
+				</odc:OdcExpander>
+				<odc:OdcExpander
+					Name="Expander_UnitFuel"
+					Header="作战单元燃油"
+					Margin="0"
+					Padding="0"
+					Expanded="Expander_UnitFuel_Expanded">
+					<local:FuelPanel_WPF
+						x:Name="WPFControl_FuelPanel"
+						Margin="0" />
+				</odc:OdcExpander>
+				<odc:OdcExpander
+					Name="Expander_UnitEMCON"
+					Header="作战单元电磁管控"
+					Margin="0"
+					Expanded="Expander_UnitEMCON_Expanded">
+					<local:UnitEMCON_WPF
+						x:Name="WPFControl_UnitEMCON" />
+				</odc:OdcExpander>
+				<odc:OdcExpander
+					Name="Expander_UnitDoctrine"
+					Header="作战单元条令"
+					Margin="0"
+					Expanded="Expander_UnitDoctrine_Expanded">
+					<local:UnitDoctrine_WPF
+						x:Name="WPFControl_UnitDoctrine" />
+				</odc:OdcExpander>
+			</StackPanel>
+		</Grid>
+	</ScrollViewer>
+</UserControl>

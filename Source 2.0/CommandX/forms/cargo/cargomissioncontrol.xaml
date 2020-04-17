@@ -1,0 +1,181 @@
+<!--类 'Command.CargoMissionControl' 有 IComponentConnector.Connect 方法，但无法解析。-->
+<UserControl
+	x:Class="Command.CargoMissionControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:Command"
+	Background="{DynamicResource SystemColors.ControlBrushKey}">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary
+					Source="pack://application:,,,/CommandX;Component/WPF/CommandWPFResourceDictionary.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="131*" />
+			<RowDefinition
+				Height="330*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="435*" />
+			<ColumnDefinition
+				Width="361*" />
+		</Grid.ColumnDefinitions>
+		<ScrollViewer
+			Grid.Row="0"
+			Grid.Column="0"
+			Grid.RowSpan="2"
+			VerticalScrollBarVisibility="Visible">
+			<StackPanel>
+				<GroupBox
+					Header="母舰平台">
+					<ListBox
+						Height="100"
+						DisplayMemberPath="Name"
+						ItemsSource="{Binding Motherships}" />
+				</GroupBox>
+				<GroupBox
+					Header="要卸载的货物">
+					<DockPanel>
+						<StackPanel
+							Orientation="Horizontal"
+							DockPanel.Dock="Top">
+							<Button
+								Command="{Binding MountUnloadAllCommand}">&lt; &lt;</Button>
+							<Button
+								Command="{Binding MountUnloadOneCommand}">&lt;</Button>
+							<Button
+								Command="{Binding MountLoadOneCommand}">&gt;</Button>
+							<Button
+								Command="{Binding MountLoadAllCommand}">&gt; &gt;</Button>
+						</StackPanel>
+						<ListBox
+							Height="100"
+							DisplayMemberPath="Status"
+							ItemsSource="{Binding Mounts}"
+							SelectedItem="{Binding SelectedMount}" />
+					</DockPanel>
+				</GroupBox>
+				<GroupBox
+					Header="飞机油门与高度">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition
+								Width="150" />
+							<ColumnDefinition
+								Width="*" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition />
+							<RowDefinition />
+							<RowDefinition />
+							<RowDefinition />
+						</Grid.RowDefinitions>
+						<Label
+							HorizontalAlignment="Right">出航油门</Label>
+						<ComboBox
+							Grid.Column="1"
+							Grid.Row="0"
+							SelectedIndex="{Binding TransitThrottle_Aircraft}">
+							<ComboBoxItem
+								Tag="1">低速</ComboBoxItem>
+							<ComboBoxItem
+								Tag="2">巡航</ComboBoxItem>
+							<ComboBoxItem
+								Tag="3">全速</ComboBoxItem>
+							<ComboBoxItem
+								Tag="4">加力</ComboBoxItem>
+						</ComboBox>
+						<Label
+							HorizontalAlignment="Right"
+							Grid.Row="1">落区油门</Label>
+						<ComboBox
+							Grid.Column="1"
+							Grid.Row="1"
+							SelectedIndex="{Binding StationThrottle_Aircraft}">
+							<ComboBoxItem
+								Tag="1">低速</ComboBoxItem>
+							<ComboBoxItem
+								Tag="2">巡航</ComboBoxItem>
+							<ComboBoxItem
+								Tag="3">全速</ComboBoxItem>
+							<ComboBoxItem
+								Tag="4">加力</ComboBoxItem>
+						</ComboBox>
+						<Label
+							HorizontalAlignment="Right"
+							Grid.Row="2">出航高度(英尺)</Label>
+						<TextBox
+							Grid.Column="1"
+							Grid.Row="2"
+							Text="{Binding TransitAltitude_Aircraft}" />
+						<Label
+							HorizontalAlignment="Right"
+							Grid.Row="3">落区高度(英尺)</Label>
+						<TextBox
+							Grid.Column="1"
+							Grid.Row="3"
+							Text="{Binding StationAltitude_Aircraft}" />
+					</Grid>
+				</GroupBox>
+				<GroupBox
+					Header="水面舰艇油门 ">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition
+								Width="150" />
+							<ColumnDefinition
+								Width="*" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition />
+							<RowDefinition />
+						</Grid.RowDefinitions>
+						<Label
+							HorizontalAlignment="Right">出航油门</Label>
+						<ComboBox
+							Grid.Column="1"
+							Grid.Row="0"
+							SelectedIndex="{Binding TransitThrottle_Ship}">
+							<ComboBoxItem
+								Tag="1">低速</ComboBoxItem>
+							<ComboBoxItem
+								Tag="2">巡航</ComboBoxItem>
+							<ComboBoxItem
+								Tag="3">全速</ComboBoxItem>
+							<ComboBoxItem
+								Tag="4">最大</ComboBoxItem>
+						</ComboBox>
+						<Label
+							HorizontalAlignment="Right"
+							Grid.Row="1">码头油门</Label>
+						<ComboBox
+							Grid.Column="1"
+							Grid.Row="1"
+							SelectedIndex="{Binding StationThrottle_Ship}">
+							<ComboBoxItem
+								Tag="1">低速</ComboBoxItem>
+							<ComboBoxItem
+								Tag="2">巡航</ComboBoxItem>
+							<ComboBoxItem
+								Tag="3">全速</ComboBoxItem>
+							<ComboBoxItem
+								Tag="4">最大</ComboBoxItem>
+						</ComboBox>
+					</Grid>
+				</GroupBox>
+			</StackPanel>
+		</ScrollViewer>
+		<DockPanel
+			Grid.Row="1"
+			Grid.Column="1">
+			<GroupBox
+				Header="问题清单">
+				<ListBox
+					ItemsSource="{Binding Issues}" />
+			</GroupBox>
+		</DockPanel>
+	</Grid>
+</UserControl>

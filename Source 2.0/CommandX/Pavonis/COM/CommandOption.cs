@@ -1,0 +1,17 @@
+﻿using System;
+
+namespace Pavonis.COM
+{
+	// Token: 0x02001074 RID: 4212
+	internal enum CommandOption
+	{
+		// Token: 0x04004E6C RID: 20076
+		OLECMDEXECOPT_DODEFAULT,
+		// Token: 0x04004E6D RID: 20077
+		OLECMDEXECOPT_PROMPTUSER,
+		// Token: 0x04004E6E RID: 20078
+		OLECMDEXECOPT_DONTPROMPTUSER,
+		// Token: 0x04004E6F RID: 20079
+		OLECMDEXECOPT_SHOWHELP
+	}
+}

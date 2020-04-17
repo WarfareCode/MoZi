@@ -1,0 +1,2755 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{8FC4DDCF-6687-427C-A447-AC4891BDDA17}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CommandX</RootNamespace>
+    <AssemblyName>CommandX</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <ApplicationIcon>CommandX.ico</ApplicationIcon>
+    <StartupObject>ns32.CommandApp</StartupObject>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MathNet.Numerics">
+      <HintPath>..\..\CommandX\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Spatial">
+      <HintPath>..\..\CommandX\MathNet.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="MSDN.HtmlEditorControl">
+      <HintPath>..\..\CommandX\MSDN.HtmlEditorControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Odyssey">
+      <HintPath>..\..\CommandX\Odyssey.dll</HintPath>
+    </Reference>
+    <Reference Include="QuickGraph">
+      <HintPath>..\..\CommandX\QuickGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="SevenZipSharp">
+      <HintPath>..\..\CommandX\SevenZipSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Steamworks.NET">
+      <HintPath>..\..\CommandX\Steamworks.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System.Core" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Microsoft.DirectX">
+      <HintPath>..\..\CommandX\Microsoft.DirectX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3D">
+      <HintPath>..\..\CommandX\Microsoft.DirectX.Direct3D.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.Direct3DX">
+      <HintPath>..\..\CommandX\Microsoft.DirectX.Direct3DX.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks">
+      <HintPath>..\..\CommandX\Microsoft.VisualBasic.PowerPacks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="NLua">
+      <HintPath>..\..\CommandX\NLua.dll</HintPath>
+    </Reference>
+    <Reference Include="KeraLua">
+      <HintPath>..\..\CommandX\KeraLua.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.AudioVideoPlayback">
+      <HintPath>..\..\CommandX\Microsoft.DirectX.AudioVideoPlayback.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.mshtml">
+      <HintPath>..\..\CommandX\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="Microsoft.VisualC" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\CommandX\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\..\CommandX\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid">
+      <HintPath>..\..\CommandX\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="mscorlib" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADODB\Connection.cs" />
+    <Compile Include="ADODB\Connection15.cs" />
+    <Compile Include="ADODB\ConnectionEvents.cs" />
+    <Compile Include="ADODB\ConnectionEvents_Event.cs" />
+    <Compile Include="ADODB\_ADO.cs" />
+    <Compile Include="ADODB\_Connection.cs" />
+    <Compile Include="ADOX\Catalog.cs" />
+    <Compile Include="ADOX\Column.cs" />
+    <Compile Include="ADOX\ColumnAttributesEnum.cs" />
+    <Compile Include="ADOX\Columns.cs" />
+    <Compile Include="ADOX\DataTypeEnum.cs" />
+    <Compile Include="ADOX\Table.cs" />
+    <Compile Include="ADOX\Tables.cs" />
+    <Compile Include="ADOX\_Catalog.cs" />
+    <Compile Include="ADOX\_Collection.cs" />
+    <Compile Include="ADOX\_Column.cs" />
+    <Compile Include="ADOX\_Table.cs" />
+    <Compile Include="AdvancedDataGridView\Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="AdvancedDataGridView\TreeGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ClipperLib\IntPoint.cs" />
+    <Compile Include="Command\AddSatellite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\AddSatellite.Designer.cs">
+      <DependentUpon>AddSatellite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\AircraftFuelViewModel.cs" />
+    <Compile Include="Command\AirOps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\AirOps.Designer.cs">
+      <DependentUpon>AirOps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\AttackTarget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\AttackTarget.Designer.cs">
+      <DependentUpon>AttackTarget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Command\BrowseScenarioPlatforms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\BrowseScenarioPlatforms.Designer.cs">
+      <DependentUpon>BrowseScenarioPlatforms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\CampaignPlayWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\CampaignPlayWindow.Designer.cs">
+      <DependentUpon>CampaignPlayWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\CargoMissionAssignedUnitViewModel.cs" />
+    <Compile Include="Command\CargoMissionControl.cs" />
+    <Compile Include="Command\CargoMissionMothershipCargoMountViewModel.cs" />
+    <Compile Include="Command\CargoMissionMothershipUnitViewModel.cs" />
+    <Compile Include="Command\CargoMissionViewModel.cs" />
+    <Compile Include="Command\CargoOpsCargoItemViewModel.cs" />
+    <Compile Include="Command\CargoOpsControl.cs" />
+    <Compile Include="Command\CargoOpsViewModel.cs" />
+    <Compile Include="Command\ChooseSide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\ChooseSide.Designer.cs">
+      <DependentUpon>ChooseSide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\Client.cs" />
+    <Compile Include="Command\CommandWPFResourceDictionary.cs" />
+    <Compile Include="Command\ConsoleWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\ConsoleWindow.Designer.cs">
+      <DependentUpon>ConsoleWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\DBViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\DBViewer.Designer.cs">
+      <DependentUpon>DBViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\DockingOps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\DockingOps.Designer.cs">
+      <DependentUpon>DockingOps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\DoctrineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\DoctrineForm.Designer.cs">
+      <DependentUpon>DoctrineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\DoctrineViewModel.cs" />
+    <Compile Include="Command\EditAC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\EditAC.Designer.cs">
+      <DependentUpon>EditAC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\EditAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\EditAction.Designer.cs">
+      <DependentUpon>EditAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\EditBoats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\EditBoats.Designer.cs">
+      <DependentUpon>EditBoats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\EditCargoCargoItemViewModel.cs" />
+    <Compile Include="Command\EditCargoControl.cs" />
+    <Compile Include="Command\EditCargoViewModel.cs" />
+    <Compile Include="Command\EditCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\EditCondition.Designer.cs">
+      <DependentUpon>EditCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\EditEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\EditEvent.Designer.cs">
+      <DependentUpon>EditEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\EditSpecialAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\EditSpecialAction.Designer.cs">
+      <DependentUpon>EditSpecialAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\ExclusionZonesWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\ExclusionZonesWindow.Designer.cs">
+      <DependentUpon>ExclusionZonesWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\FuelPanel_WPF.cs" />
+    <Compile Include="Command\FuelViewModel.cs" />
+    <Compile Include="Command\InverseBooleanToVisibilityConverter.cs" />
+    <Compile Include="Command\InvertableBool.cs" />
+    <Compile Include="Command\LicenseDialogViewModel.cs" />
+    <Compile Include="Command\LicenseTweaker.cs" />
+    <Compile Include="Command\LicenseViewModel.cs" />
+    <Compile Include="Command\ListActions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\ListActions.Designer.cs">
+      <DependentUpon>ListActions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\ListConditions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\ListConditions.Designer.cs">
+      <DependentUpon>ListConditions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\ListEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\ListEvents.Designer.cs">
+      <DependentUpon>ListEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\ListSpecialActions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\ListSpecialActions.Designer.cs">
+      <DependentUpon>ListSpecialActions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\ListTriggers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\ListTriggers.Designer.cs">
+      <DependentUpon>ListTriggers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\LoadScenario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\LoadScenario.Designer.cs">
+      <DependentUpon>LoadScenario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\Magazines.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\Magazines.Designer.cs">
+      <DependentUpon>Magazines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\MessageLogWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\MessageLogWindow.Designer.cs">
+      <DependentUpon>MessageLogWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\MissionEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\MissionEditor.Designer.cs">
+      <DependentUpon>MissionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\MonteCarloForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\MonteCarloForm.Designer.cs">
+      <DependentUpon>MonteCarloForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\MP_Connect_WPF.cs" />
+    <Compile Include="Command\MultipleUnitSensors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\MultipleUnitSensors.Designer.cs">
+      <DependentUpon>MultipleUnitSensors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\My\MySettings.Designer.cs">
+      <DependentUpon>MySettings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Command\NewMission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\NewMission.Designer.cs">
+      <DependentUpon>NewMission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\NoNavZonesWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\NoNavZonesWindow.Designer.cs">
+      <DependentUpon>NoNavZonesWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\ORBAT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\ORBAT.Designer.cs">
+      <DependentUpon>ORBAT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\Postures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\Postures.Designer.cs">
+      <DependentUpon>Postures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\RealismDialogControl.cs" />
+    <Compile Include="Command\RealismDialogViewModel.cs" />
+    <Compile Include="Command\RightColumnWPF.cs" />
+    <Compile Include="Command\SatPredictionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\SatPredictionForm.Designer.cs">
+      <DependentUpon>SatPredictionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\SaveGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\SaveGroup.Designer.cs">
+      <DependentUpon>SaveGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\ScenarioFeatures.cs" />
+    <Compile Include="Command\ShipFuelViewModel.cs" />
+    <Compile Include="Command\Sides.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\Sides.Designer.cs">
+      <DependentUpon>Sides.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\SoundHandler_Effects.cs" />
+    <Compile Include="Command\SpecialActionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\SpecialActionsForm.Designer.cs">
+      <DependentUpon>SpecialActionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\SpecificDoctrineViewModel.cs" />
+    <Compile Include="Command\SpecificRealismSettingViewModel.cs" />
+    <Compile Include="Command\SteamUpdateScenarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\SteamUpdateScenarioForm.Designer.cs">
+      <DependentUpon>SteamUpdateScenarioForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\SubmarineFuelViewModel.cs" />
+    <Compile Include="Command\TankerPlanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\TankerPlanner.Designer.cs">
+      <DependentUpon>TankerPlanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\UnitDoctrine_WPF.cs" />
+    <Compile Include="Command\UnitEMCONViewModel.cs" />
+    <Compile Include="Command\UnitEMCON_WPF.cs" />
+    <Compile Include="Command\UnitFilter.Designer.cs">
+      <DependentUpon>UnitFilter.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Command\UnitSensors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\UnitSensors.Designer.cs">
+      <DependentUpon>UnitSensors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command\UnitStatus_WPF.cs" />
+    <Compile Include="Command\UnitWeaponElementViewModel.cs" />
+    <Compile Include="Command\UnitWeapons_WPF.cs" />
+    <Compile Include="Command\UnitWeaponViewModel.cs" />
+    <Compile Include="Command\UnlicensedFeaturesWindow.cs" />
+    <Compile Include="Command\WeaponsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Command\WeaponsWindow.Designer.cs">
+      <DependentUpon>WeaponsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Command_Core\ActiveUnit.cs" />
+    <Compile Include="Command_Core\ActiveUnit_AI.cs" />
+    <Compile Include="Command_Core\ActiveUnit_AirOps.cs" />
+    <Compile Include="Command_Core\ActiveUnit_CommStuff.cs" />
+    <Compile Include="Command_Core\ActiveUnit_Damage.cs" />
+    <Compile Include="Command_Core\ActiveUnit_DockingOps.cs" />
+    <Compile Include="Command_Core\ActiveUnit_Kinematics.cs" />
+    <Compile Include="Command_Core\ActiveUnit_Navigator.cs" />
+    <Compile Include="Command_Core\ActiveUnit_Sensory.cs" />
+    <Compile Include="Command_Core\ActiveUnit_Weaponry.cs" />
+    <Compile Include="Command_Core\Aircraft.cs" />
+    <Compile Include="Command_Core\Aircraft_AI.cs" />
+    <Compile Include="Command_Core\Aircraft_AirOps.cs" />
+    <Compile Include="Command_Core\Aircraft_Damage.cs" />
+    <Compile Include="Command_Core\Aircraft_Kinematics.cs" />
+    <Compile Include="Command_Core\Aircraft_Weaponry.cs" />
+    <Compile Include="Command_Core\AirFacility.cs" />
+    <Compile Include="Command_Core\AltBand.cs" />
+    <Compile Include="Command_Core\Cargo.cs" />
+    <Compile Include="Command_Core\CommDevice.cs" />
+    <Compile Include="Command_Core\Contact.cs" />
+    <Compile Include="Command_Core\Contact_Base.cs" />
+    <Compile Include="Command_Core\DAL\DBFunctions.cs" />
+    <Compile Include="Command_Core\DBOps.cs" />
+    <Compile Include="Command_Core\DBRecord.cs" />
+    <Compile Include="Command_Core\DockFacility.cs" />
+    <Compile Include="Command_Core\Doctrine.cs" />
+    <Compile Include="Command_Core\EmissionContainer.cs" />
+    <Compile Include="Command_Core\Engine.cs" />
+    <Compile Include="Command_Core\EventAction.cs" />
+    <Compile Include="Command_Core\EventAction_TeleportInArea.cs" />
+    <Compile Include="Command_Core\EventCondition.cs" />
+    <Compile Include="Command_Core\EventExportNotification.cs" />
+    <Compile Include="Command_Core\EventTrigger.cs" />
+    <Compile Include="Command_Core\ExclusionZone.cs" />
+    <Compile Include="Command_Core\Explosion.cs" />
+    <Compile Include="Command_Core\ExportedEventType.cs" />
+    <Compile Include="Command_Core\Facility.cs" />
+    <Compile Include="Command_Core\Facility_Damage.cs" />
+    <Compile Include="Command_Core\FerryMission.cs" />
+    <Compile Include="Command_Core\FixedGeoPolygon.cs" />
+    <Compile Include="Command_Core\FuelRec.cs" />
+    <Compile Include="Command_Core\GameGeneral.cs" />
+    <Compile Include="Command_Core\GeoPoint.cs" />
+    <Compile Include="Command_Core\GlobalVariables.cs" />
+    <Compile Include="Command_Core\GroundImpact.cs" />
+    <Compile Include="Command_Core\Group.cs" />
+    <Compile Include="Command_Core\GroupsCollection.cs" />
+    <Compile Include="Command_Core\Group_Kinematics.cs" />
+    <Compile Include="Command_Core\IEventExporter.cs" />
+    <Compile Include="Command_Core\ImportExportRecord.cs" />
+    <Compile Include="Command_Core\Loadout.cs" />
+    <Compile Include="Command_Core\LoggedMessage.cs" />
+    <Compile Include="Command_Core\LuaUtility.cs" />
+    <Compile Include="Command_Core\Lua\LuaEnuNames.cs" />
+    <Compile Include="Command_Core\Lua\LuaSandBox.cs" />
+    <Compile Include="Command_Core\Lua\LuaWrapper_ActiveUnit.cs" />
+    <Compile Include="Command_Core\Lua\LuaWrapper_ActiveUnit_SE.cs" />
+    <Compile Include="Command_Core\Lua\LuaWrapper_Contact.cs" />
+    <Compile Include="Command_Core\Lua\LuaWrapper_Doctrine.cs" />
+    <Compile Include="Command_Core\Lua\LuaWrapper_Geopoint.cs" />
+    <Compile Include="Command_Core\Lua\LuaWrapper_Group.cs" />
+    <Compile Include="Command_Core\Lua\LuaWrapper_Mission.cs" />
+    <Compile Include="Command_Core\Lua\LuaWrapper_ReferencePoint.cs" />
+    <Compile Include="Command_Core\Lua\LuaWrapper_Side.cs" />
+    <Compile Include="Command_Core\Lua\LuaWrapper_Zone.cs" />
+    <Compile Include="Command_Core\Lua\PrivateMethods.cs" />
+    <Compile Include="Command_Core\Magazine.cs" />
+    <Compile Include="Command_Core\Math2.cs" />
+    <Compile Include="Command_Core\Misc.cs" />
+    <Compile Include="Command_Core\Mission.cs" />
+    <Compile Include="Command_Core\Mount.cs" />
+    <Compile Include="Command_Core\My\MySettings.Designer.cs">
+      <DependentUpon>MySettings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Command_Core\NoNavZone.cs" />
+    <Compile Include="Command_Core\PlatformComponent.cs" />
+    <Compile Include="Command_Core\QuickJumpSlot.cs" />
+    <Compile Include="Command_Core\RangeSymbol.cs" />
+    <Compile Include="Command_Core\RBWQuadTree.cs" />
+    <Compile Include="Command_Core\Recorder.cs" />
+    <Compile Include="Command_Core\ReferencePoint.cs" />
+    <Compile Include="Command_Core\Satellite.cs" />
+    <Compile Include="Command_Core\Scenario.cs" />
+    <Compile Include="Command_Core\ScenAttachmentObject.cs" />
+    <Compile Include="Command_Core\ScenContainer.cs" />
+    <Compile Include="Command_Core\Sensor.cs" />
+    <Compile Include="Command_Core\Ship.cs" />
+    <Compile Include="Command_Core\Ship_AI.cs" />
+    <Compile Include="Command_Core\Side.cs" />
+    <Compile Include="Command_Core\SimEvent.cs" />
+    <Compile Include="Command_Core\SpecialAction.cs" />
+    <Compile Include="Command_Core\Strike.cs" />
+    <Compile Include="Command_Core\Submarine.cs" />
+    <Compile Include="Command_Core\Submarine_AI.cs" />
+    <Compile Include="Command_Core\Submarine_Kinematics.cs" />
+    <Compile Include="Command_Core\Submarine_Weaponry.cs" />
+    <Compile Include="Command_Core\Terrain.cs" />
+    <Compile Include="Command_Core\UnguidedWeapon.cs" />
+    <Compile Include="Command_Core\Unit.cs" />
+    <Compile Include="Command_Core\Warhead.cs" />
+    <Compile Include="Command_Core\WaterSplash.cs" />
+    <Compile Include="Command_Core\Waypoint.cs" />
+    <Compile Include="Command_Core\Weapon.cs" />
+    <Compile Include="Command_Core\WeaponImpact.cs" />
+    <Compile Include="Command_Core\WeaponRec.cs" />
+    <Compile Include="Command_Core\Weapon_AI.cs" />
+    <Compile Include="Command_Core\Weapon_CommStuff.cs" />
+    <Compile Include="Command_Core\Weather.cs" />
+    <Compile Include="Command_Core\WPModule.cs" />
+    <Compile Include="Command_Core\XSection.cs" />
+    <Compile Include="Command_Core\Zone.cs" />
+    <Compile Include="Command_Core\_ExporterType.cs" />
+    <Compile Include="Command_Core\_RunMode.cs" />
+    <Compile Include="DAO\Database.cs" />
+    <Compile Include="DAO\DBEngine.cs" />
+    <Compile Include="DAO\Field.cs" />
+    <Compile Include="DAO\Fields.cs" />
+    <Compile Include="DAO\Recordset.cs" />
+    <Compile Include="DAO\TableDef.cs" />
+    <Compile Include="DAO\TableDefs.cs" />
+    <Compile Include="DAO\_Collection.cs" />
+    <Compile Include="DAO\_DAO.cs" />
+    <Compile Include="DAO\_DBEngine.cs" />
+    <Compile Include="DAO\_DynaCollection.cs" />
+    <Compile Include="DAO\_Field.cs" />
+    <Compile Include="DAO\_TableDef.cs" />
+    <Compile Include="DiskQueue\Implementation\Atomic.cs" />
+    <Compile Include="DiskQueue\Implementation\Constants.cs" />
+    <Compile Include="DiskQueue\Implementation\CrossPlatform\Unix\UnixFilePermissions.cs" />
+    <Compile Include="DiskQueue\Implementation\CrossPlatform\Unix\UnsafeNativeMethods.cs" />
+    <Compile Include="DiskQueue\Implementation\Entry.cs" />
+    <Compile Include="DiskQueue\Implementation\Extensions.cs" />
+    <Compile Include="DiskQueue\Implementation\Operation.cs" />
+    <Compile Include="DiskQueue\Implementation\OperationType.cs" />
+    <Compile Include="DiskQueue\Implementation\PendingWriteException.cs" />
+    <Compile Include="DiskQueue\Implementation\PersistentQueueImpl.cs" />
+    <Compile Include="DiskQueue\Implementation\PersistentQueueSession.cs" />
+    <Compile Include="DiskQueue\IPersistentQueue.cs" />
+    <Compile Include="DiskQueue\IPersistentQueueImpl.cs" />
+    <Compile Include="DiskQueue\IPersistentQueueSession.cs" />
+    <Compile Include="DiskQueue\PersistentQueue.cs" />
+    <Compile Include="DiskQueue\SetPermissions.cs" />
+    <Compile Include="DotSpatial\Serialization\BaseList.cs" />
+    <Compile Include="DotSpatial\Serialization\Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="DotSpatial\SerializeExtent.cs" />
+    <Compile Include="DotSpatial\Topology\Coordinate.cs" />
+    <Compile Include="DotSpatial\Topology\CoordinateArraySequence.cs" />
+    <Compile Include="DotSpatial\Topology\DimensionType.cs" />
+    <Compile Include="DotSpatial\Topology\Envelope.cs" />
+    <Compile Include="DotSpatial\Topology\Geometry.cs" />
+    <Compile Include="DotSpatial\Topology\GeometryCollection.cs" />
+    <Compile Include="DotSpatial\Topology\GeometryFactory.cs" />
+    <Compile Include="DotSpatial\Topology\ICoordinateSequenceFactory.cs" />
+    <Compile Include="DotSpatial\Topology\IEnvelope.cs" />
+    <Compile Include="DotSpatial\Topology\IGeometry.cs" />
+    <Compile Include="DotSpatial\Topology\IGeometryCollection.cs" />
+    <Compile Include="DotSpatial\Topology\IGeometryFactory.cs" />
+    <Compile Include="DotSpatial\Topology\ILinearRing.cs" />
+    <Compile Include="DotSpatial\Topology\ILineString.cs" />
+    <Compile Include="DotSpatial\Topology\IMultiPoint.cs" />
+    <Compile Include="DotSpatial\Topology\IMultiPolygon.cs" />
+    <Compile Include="DotSpatial\Topology\IPoint.cs" />
+    <Compile Include="DotSpatial\Topology\IPolygon.cs" />
+    <Compile Include="DotSpatial\Topology\LinearRing.cs" />
+    <Compile Include="DotSpatial\Topology\LineSegment.cs" />
+    <Compile Include="DotSpatial\Topology\LineString.cs" />
+    <Compile Include="DotSpatial\Topology\MultiPoint.cs" />
+    <Compile Include="DotSpatial\Topology\MultiPolygon.cs" />
+    <Compile Include="DotSpatial\Topology\Noding\OctantDirection.cs" />
+    <Compile Include="DotSpatial\Topology\Point.cs" />
+    <Compile Include="DotSpatial\Topology\Polygon.cs" />
+    <Compile Include="DotSpatial\Topology\PrecisionModel.cs" />
+    <Compile Include="DotSpatial\Topology\PrecisionModelType.cs" />
+    <Compile Include="DotSpatial\Topology\Utilities\CoordinateArraySequenceFactory.cs" />
+    <Compile Include="GeoAPI\Geometries\Dimensions.cs" />
+    <Compile Include="GeoAPI\Geometries\ICoordinate.cs" />
+    <Compile Include="GeoAPI\Geometries\ICoordinateSequence.cs" />
+    <Compile Include="GeoAPI\Geometries\ICoordinateSequenceFactory.cs" />
+    <Compile Include="GeoAPI\Geometries\IEnvelope.cs" />
+    <Compile Include="GeoAPI\Geometries\IGeometry.cs" />
+    <Compile Include="GeoAPI\Geometries\IGeometryCollection.cs" />
+    <Compile Include="GeoAPI\Geometries\IGeometryFactory.cs" />
+    <Compile Include="GeoAPI\Geometries\ILinearRing.cs" />
+    <Compile Include="GeoAPI\Geometries\ILineString.cs" />
+    <Compile Include="GeoAPI\Geometries\IMultiPoint.cs" />
+    <Compile Include="GeoAPI\Geometries\IMultiPolygon.cs" />
+    <Compile Include="GeoAPI\Geometries\IPoint.cs" />
+    <Compile Include="GeoAPI\Geometries\IPolygon.cs" />
+    <Compile Include="GeoAPI\Geometries\IPrecisionModel.cs" />
+    <Compile Include="GeoAPI\Geometries\PrecisionModels.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\GeometriesGraph\NodeMap.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\Coordinate.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\CoordinateArraySequence.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\CoordinateArraySequenceFactory.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\CoordinateStruct.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\CoordinateStructSequence.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\CoordinateStructSequenceFactory.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\DefaultCoordinateSequence.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\DefaultCoordinateSequenceFactory.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\Envelope.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\Geometry.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\GeometryCollection.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\GeometryFactory.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\LinearRing.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\LineSegment.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\LineString.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\MultiPoint.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\MultiPolygon.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\Point.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\Polygon.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\Geometries\PrecisionModel.cs" />
+    <Compile Include="GisSharpBlog\NetTopologySuite\IO\ShapeGeometryType.cs" />
+    <Compile Include="Iesi_NTS\Collections\Generic\ISet.cs" />
+    <Compile Include="Iesi_NTS\Collections\Generic\Set.cs" />
+    <Compile Include="Iesi_NTS\Collections\ISet.cs" />
+    <Compile Include="Iesi_NTS\Collections\Set.cs" />
+    <Compile Include="linkType.cs" />
+    <Compile Include="Nini\Ini\IniException.cs" />
+    <Compile Include="Nini\Ini\IniReader.cs" />
+    <Compile Include="ns0\ActivationPoint_BOL.cs" />
+    <Compile Include="ns0\ActiveUnit_CommLink.cs" />
+    <Compile Include="ns0\Aimpoint.cs" />
+    <Compile Include="ns0\Aircraft_CommStuff.cs" />
+    <Compile Include="ns0\Aircraft_Navigator.cs" />
+    <Compile Include="ns0\Aircraft_Sensory.cs" />
+    <Compile Include="ns0\AppBase.cs" />
+    <Compile Include="ns0\Attribute4.cs" />
+    <Compile Include="ns0\CallsignGenerator.cs" />
+    <Compile Include="ns0\Campaign.cs" />
+    <Compile Include="ns0\EventAction_ChangeMissionStatus.cs" />
+    <Compile Include="ns0\EventAction_EndScenario.cs" />
+    <Compile Include="ns0\EventAction_LuaScript.cs" />
+    <Compile Include="ns0\EventAction_Message.cs" />
+    <Compile Include="ns0\EventCondition_LuaScript.cs" />
+    <Compile Include="ns0\ICargo.cs" />
+    <Compile Include="ns0\LoadoutMissionProfile.cs" />
+    <Compile Include="ns0\MyComputer.cs" />
+    <Compile Include="ns0\MyCryptography.cs" />
+    <Compile Include="ns0\MyCryptoTransformer.cs" />
+    <Compile Include="ns0\MyDESCryptoServiceProvider.cs" />
+    <Compile Include="ns0\MyTemplate.cs" />
+    <Compile Include="ns0\SAO_Inst.cs" />
+    <Compile Include="ns0\SAO_LocalVideo.cs" />
+    <Compile Include="ns0\SAO_LuaScript.cs" />
+    <Compile Include="ns0\SAO_OverlaySingle.cs" />
+    <Compile Include="ns0\ScenarioCompressor.cs" />
+    <Compile Include="ns0\_CargoType.cs" />
+    <Compile Include="ns11\Class1994.Designer.cs">
+      <DependentUpon>Class1994.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ns11\Class558.cs" />
+    <Compile Include="ns11\Class559.cs" />
+    <Compile Include="ns11\Class560.cs" />
+    <Compile Include="ns11\Class562.cs" />
+    <Compile Include="ns11\Class565.cs" />
+    <Compile Include="ns11\Class566.cs" />
+    <Compile Include="ns11\Class567.cs" />
+    <Compile Include="ns11\Delegate32.cs" />
+    <Compile Include="ns11\Delegate33.cs" />
+    <Compile Include="ns11\Enum134.cs" />
+    <Compile Include="ns11\Enum135.cs" />
+    <Compile Include="ns11\Enum136.cs" />
+    <Compile Include="ns11\Enum137.cs" />
+    <Compile Include="ns11\Interface20.cs" />
+    <Compile Include="ns11\Interface21.cs" />
+    <Compile Include="ns11\Struct54.cs" />
+    <Compile Include="ns11\Struct57.cs" />
+    <Compile Include="ns12\Class568.cs" />
+    <Compile Include="ns12\Class570.cs" />
+    <Compile Include="ns12\Class571.cs" />
+    <Compile Include="ns12\Class572.cs" />
+    <Compile Include="ns12\Class573.cs" />
+    <Compile Include="ns12\Class574.cs" />
+    <Compile Include="ns12\Class576.cs" />
+    <Compile Include="ns12\Class577.cs" />
+    <Compile Include="ns12\Class578.cs" />
+    <Compile Include="ns12\Class579.cs" />
+    <Compile Include="ns12\Class582.cs" />
+    <Compile Include="ns12\Class583.cs" />
+    <Compile Include="ns12\Class584.cs" />
+    <Compile Include="ns12\Class585.cs" />
+    <Compile Include="ns12\Class588.cs" />
+    <Compile Include="ns12\Class589.cs" />
+    <Compile Include="ns12\Class591.cs" />
+    <Compile Include="ns12\Class592.cs" />
+    <Compile Include="ns12\Class593.cs" />
+    <Compile Include="ns12\Class594.cs" />
+    <Compile Include="ns12\Class595.cs" />
+    <Compile Include="ns12\Class596.cs" />
+    <Compile Include="ns12\Class598.cs" />
+    <Compile Include="ns12\Class600.cs" />
+    <Compile Include="ns12\Class601.cs" />
+    <Compile Include="ns12\Class603.cs" />
+    <Compile Include="ns12\Class604.cs" />
+    <Compile Include="ns12\Class608.cs" />
+    <Compile Include="ns12\Class609.cs" />
+    <Compile Include="ns12\Class610.cs" />
+    <Compile Include="ns12\Class612.cs" />
+    <Compile Include="ns12\Class613.cs" />
+    <Compile Include="ns12\Exception8.cs" />
+    <Compile Include="ns12\Interface23.cs" />
+    <Compile Include="ns13\Class569.cs" />
+    <Compile Include="ns13\Class581.cs" />
+    <Compile Include="ns13\Class605.cs" />
+    <Compile Include="ns13\Class614.cs" />
+    <Compile Include="ns13\Class617.cs" />
+    <Compile Include="ns13\Class618.cs" />
+    <Compile Include="ns13\Class619.cs" />
+    <Compile Include="ns13\Class621.cs" />
+    <Compile Include="ns13\Class622.cs" />
+    <Compile Include="ns13\Class623.cs" />
+    <Compile Include="ns13\Class624.cs" />
+    <Compile Include="ns13\Class625.cs" />
+    <Compile Include="ns13\Class626.cs" />
+    <Compile Include="ns13\Class627.cs" />
+    <Compile Include="ns13\Class628.cs" />
+    <Compile Include="ns13\Class629.cs" />
+    <Compile Include="ns13\Class630.cs" />
+    <Compile Include="ns13\Class631.cs" />
+    <Compile Include="ns13\Class632.cs" />
+    <Compile Include="ns13\Class635.cs" />
+    <Compile Include="ns13\Class636.cs" />
+    <Compile Include="ns13\Class638.cs" />
+    <Compile Include="ns13\Class639.cs" />
+    <Compile Include="ns13\Class640.cs" />
+    <Compile Include="ns13\Class641.cs" />
+    <Compile Include="ns13\Class642.cs" />
+    <Compile Include="ns13\Class643.cs" />
+    <Compile Include="ns13\Class644.cs" />
+    <Compile Include="ns13\Class645.cs" />
+    <Compile Include="ns13\Enum139.cs" />
+    <Compile Include="ns13\Enum140.cs" />
+    <Compile Include="ns13\Exception10.cs" />
+    <Compile Include="ns13\Exception11.cs" />
+    <Compile Include="ns13\Exception9.cs" />
+    <Compile Include="ns13\Struct58.cs" />
+    <Compile Include="ns14\Class580.cs" />
+    <Compile Include="ns14\Class597.cs" />
+    <Compile Include="ns14\Class615.cs" />
+    <Compile Include="ns14\Class616.cs" />
+    <Compile Include="ns14\Class620.cs" />
+    <Compile Include="ns14\Class646.cs" />
+    <Compile Include="ns14\Class647.cs" />
+    <Compile Include="ns14\Class648.cs" />
+    <Compile Include="ns14\Class649.cs" />
+    <Compile Include="ns14\Class650.cs" />
+    <Compile Include="ns14\Class651.cs" />
+    <Compile Include="ns14\Class652.cs" />
+    <Compile Include="ns14\Class653.cs" />
+    <Compile Include="ns14\Class654.cs" />
+    <Compile Include="ns14\Class655.cs" />
+    <Compile Include="ns14\Class656.cs" />
+    <Compile Include="ns14\Class658.cs" />
+    <Compile Include="ns14\Class659.cs" />
+    <Compile Include="ns14\Class660.cs" />
+    <Compile Include="ns14\Class661.cs" />
+    <Compile Include="ns14\Class662.cs" />
+    <Compile Include="ns14\Class663.cs" />
+    <Compile Include="ns14\Class664.cs" />
+    <Compile Include="ns14\Class665.cs" />
+    <Compile Include="ns14\Class666.cs" />
+    <Compile Include="ns14\Class667.cs" />
+    <Compile Include="ns14\Class668.cs" />
+    <Compile Include="ns14\Class669.cs" />
+    <Compile Include="ns14\Enum141.cs" />
+    <Compile Include="ns14\Enum142.cs" />
+    <Compile Include="ns14\Enum143.cs" />
+    <Compile Include="ns14\Enum144.cs" />
+    <Compile Include="ns14\Interface24.cs" />
+    <Compile Include="ns14\Interface25.cs" />
+    <Compile Include="ns14\Struct59.cs" />
+    <Compile Include="ns15\BaseCollection.cs" />
+    <Compile Include="ns15\Class2021.cs" />
+    <Compile Include="ns15\Class2060.cs" />
+    <Compile Include="ns15\Class2061.cs" />
+    <Compile Include="ns15\Class2062.cs" />
+    <Compile Include="ns15\Class2063.cs" />
+    <Compile Include="ns15\Class2064.cs" />
+    <Compile Include="ns15\Class2065.cs" />
+    <Compile Include="ns15\Class670.Designer.cs">
+      <DependentUpon>Class670.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ns15\Class671.Designer.cs">
+      <DependentUpon>Class671.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ns15\Class672.cs" />
+    <Compile Include="ns15\Class673.cs" />
+    <Compile Include="ns15\Class675.cs" />
+    <Compile Include="ns15\Class676.cs" />
+    <Compile Include="ns15\Class677.cs" />
+    <Compile Include="ns15\Class678.cs" />
+    <Compile Include="ns15\Class679.cs" />
+    <Compile Include="ns15\Class680.cs" />
+    <Compile Include="ns15\Class681.cs" />
+    <Compile Include="ns15\Class682.cs" />
+    <Compile Include="ns15\Class729.cs" />
+    <Compile Include="ns15\Class739.cs" />
+    <Compile Include="ns15\Class791.cs" />
+    <Compile Include="ns15\Class802.cs" />
+    <Compile Include="ns15\Class813.cs" />
+    <Compile Include="ns15\Class831.cs" />
+    <Compile Include="ns15\Class835.cs" />
+    <Compile Include="ns15\Class836.Designer.cs">
+      <DependentUpon>Class836.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ns15\CommandTreeView.Designer.cs">
+      <DependentUpon>CommandTreeView.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ns15\Control1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ns15\Delegate34.cs" />
+    <Compile Include="ns15\Delegate35.cs" />
+    <Compile Include="ns15\Enum145.cs" />
+    <Compile Include="ns15\EventArgs2.cs" />
+    <Compile Include="ns15\Exception12.cs" />
+    <Compile Include="ns16\BufferStyle.cs" />
+    <Compile Include="ns16\Class1992.cs" />
+    <Compile Include="ns16\Class1998.cs" />
+    <Compile Include="ns16\Class2003.cs" />
+    <Compile Include="ns16\Class2006.cs" />
+    <Compile Include="ns16\Class2007.cs" />
+    <Compile Include="ns16\Class2008.cs" />
+    <Compile Include="ns16\Class2009.cs" />
+    <Compile Include="ns16\Class2010.cs" />
+    <Compile Include="ns16\Class2018.cs" />
+    <Compile Include="ns16\Class2019.cs" />
+    <Compile Include="ns16\Class2020.cs" />
+    <Compile Include="ns16\Class2049.cs" />
+    <Compile Include="ns16\Class2050.cs" />
+    <Compile Include="ns16\Class2058.cs" />
+    <Compile Include="ns16\Class2059.cs" />
+    <Compile Include="ns16\Class2178.cs" />
+    <Compile Include="ns16\Class2182.cs" />
+    <Compile Include="ns16\Class833.cs" />
+    <Compile Include="ns16\Earth.cs" />
+    <Compile Include="ns16\Exception13.cs" />
+    <Compile Include="ns16\Exception14.cs" />
+    <Compile Include="ns16\Exception15.cs" />
+    <Compile Include="ns16\Exception16.cs" />
+    <Compile Include="ns16\ImageLayer.cs" />
+    <Compile Include="ns16\Interface28.cs" />
+    <Compile Include="ns16\LatLongGrid.cs" />
+    <Compile Include="ns16\LocationType.cs" />
+    <Compile Include="ns16\RenderableObject.cs" />
+    <Compile Include="ns16\RenderableObjectList.cs" />
+    <Compile Include="ns16\RenderPriority.cs" />
+    <Compile Include="ns16\TiledPlacenameSet.cs" />
+    <Compile Include="ns16\WorldWindPlacename.cs" />
+    <Compile Include="ns16\WorldWindPlacenameFile.cs" />
+    <Compile Include="ns17\Class2011.cs" />
+    <Compile Include="ns17\Class2012.cs" />
+    <Compile Include="ns17\Class2013.cs" />
+    <Compile Include="ns17\Class2014.cs" />
+    <Compile Include="ns17\Class2015.cs" />
+    <Compile Include="ns17\Class2016.cs" />
+    <Compile Include="ns17\Class2022.cs" />
+    <Compile Include="ns17\Class2023.cs" />
+    <Compile Include="ns17\Class2024.cs" />
+    <Compile Include="ns17\Class2025.cs" />
+    <Compile Include="ns17\Class2026.cs" />
+    <Compile Include="ns17\Class2027.cs" />
+    <Compile Include="ns17\Class2028.cs" />
+    <Compile Include="ns17\Class2029.cs" />
+    <Compile Include="ns17\Class2030.cs" />
+    <Compile Include="ns17\Class2031.cs" />
+    <Compile Include="ns17\Class2032.cs" />
+    <Compile Include="ns17\Class2033.cs" />
+    <Compile Include="ns17\Class2034.cs" />
+    <Compile Include="ns17\Class2035.cs" />
+    <Compile Include="ns17\Class2036.cs" />
+    <Compile Include="ns17\Class2037.cs" />
+    <Compile Include="ns17\Class2038.cs" />
+    <Compile Include="ns17\Class2039.cs" />
+    <Compile Include="ns17\Class2040.cs" />
+    <Compile Include="ns17\Class2051.cs" />
+    <Compile Include="ns17\Class2052.cs" />
+    <Compile Include="ns17\Class2053.cs" />
+    <Compile Include="ns17\Class2054.cs" />
+    <Compile Include="ns17\Class2066.cs" />
+    <Compile Include="ns17\Class2067.cs" />
+    <Compile Include="ns17\Class2068.cs" />
+    <Compile Include="ns17\Class920.cs" />
+    <Compile Include="ns17\Class921.cs" />
+    <Compile Include="ns17\Log.cs" />
+    <Compile Include="ns18\Angle.cs" />
+    <Compile Include="ns18\BoundingBox.cs" />
+    <Compile Include="ns18\Cache.cs" />
+    <Compile Include="ns18\Class1945.cs" />
+    <Compile Include="ns18\Class1947.cs" />
+    <Compile Include="ns18\Class1948.cs" />
+    <Compile Include="ns18\Class1949.cs" />
+    <Compile Include="ns18\Class1950.cs" />
+    <Compile Include="ns18\Class1952.cs" />
+    <Compile Include="ns18\Class1954.cs" />
+    <Compile Include="ns18\Class1975.cs" />
+    <Compile Include="ns18\Class2162.cs" />
+    <Compile Include="ns18\Class2163.cs" />
+    <Compile Include="ns18\Class2164.cs" />
+    <Compile Include="ns18\Class2165.cs" />
+    <Compile Include="ns18\Class2166.cs" />
+    <Compile Include="ns18\Class2167.cs" />
+    <Compile Include="ns18\Class2168.cs" />
+    <Compile Include="ns18\Class2169.cs" />
+    <Compile Include="ns18\Class2170.cs" />
+    <Compile Include="ns18\Class2171.cs" />
+    <Compile Include="ns18\Class2172.cs" />
+    <Compile Include="ns18\Class2173.cs" />
+    <Compile Include="ns18\Class2174.cs" />
+    <Compile Include="ns18\Class2175.cs" />
+    <Compile Include="ns18\Class2176.cs" />
+    <Compile Include="ns18\DrawArgs.cs" />
+    <Compile Include="ns18\Enum149.cs" />
+    <Compile Include="ns18\GeographicBoundingBox.cs" />
+    <Compile Include="ns18\ImageHelper.cs" />
+    <Compile Include="ns18\MathEngine.cs" />
+    <Compile Include="ns18\Point3d.cs" />
+    <Compile Include="ns18\ProjectedVectorRenderer.cs" />
+    <Compile Include="ns18\ProjectedVectorTile.cs" />
+    <Compile Include="ns18\Quaternion4d.cs" />
+    <Compile Include="ns19\AtmosphericScatteringSphere.cs" />
+    <Compile Include="ns19\CameraBase.cs" />
+    <Compile Include="ns19\Class1957.cs" />
+    <Compile Include="ns19\Class1958.cs" />
+    <Compile Include="ns19\Class1959.cs" />
+    <Compile Include="ns19\Class1963.cs" />
+    <Compile Include="ns19\Class1970.cs" />
+    <Compile Include="ns19\Class1971.cs" />
+    <Compile Include="ns19\Class1972.cs" />
+    <Compile Include="ns19\Class1977.cs" />
+    <Compile Include="ns19\Class1978.cs" />
+    <Compile Include="ns19\Class1979.cs" />
+    <Compile Include="ns19\Class1980.cs" />
+    <Compile Include="ns19\Class1981.cs" />
+    <Compile Include="ns19\Class1982.cs" />
+    <Compile Include="ns19\Class1983.cs" />
+    <Compile Include="ns19\Class1984.cs" />
+    <Compile Include="ns19\Class1985.cs" />
+    <Compile Include="ns19\Class1986.cs" />
+    <Compile Include="ns19\Class1988.cs" />
+    <Compile Include="ns19\Class1989.cs" />
+    <Compile Include="ns19\Delegate36.cs" />
+    <Compile Include="ns19\Delegate37.cs" />
+    <Compile Include="ns19\DynamicTexture.cs" />
+    <Compile Include="ns19\Enum150.cs" />
+    <Compile Include="ns19\Enum151.cs" />
+    <Compile Include="ns19\Frustum.cs" />
+    <Compile Include="ns19\Interface26.cs" />
+    <Compile Include="ns19\SettingsBase.cs" />
+    <Compile Include="ns19\SurfaceTile.cs" />
+    <Compile Include="ns19\TerrainAccessor.cs" />
+    <Compile Include="ns19\TimeKeeper.cs" />
+    <Compile Include="ns19\World.cs" />
+    <Compile Include="ns19\WorldSettings.cs" />
+    <Compile Include="ns19\WorldSurfaceRenderer.cs" />
+    <Compile Include="ns1\Attribute5.cs" />
+    <Compile Include="ns1\CargoMission.cs" />
+    <Compile Include="ns1\Class1.cs" />
+    <Compile Include="ns1\DestroyGoal.cs" />
+    <Compile Include="ns1\EventAction_Points.cs" />
+    <Compile Include="ns1\EventCondition_ScenHasStarted.cs" />
+    <Compile Include="ns1\EventCondition_SidePosture.cs" />
+    <Compile Include="ns1\EventTrigger_Points.cs" />
+    <Compile Include="ns1\EventTrigger_RandomTime.cs" />
+    <Compile Include="ns1\EventTrigger_RegularTime.cs" />
+    <Compile Include="ns1\EventTrigger_ScenLoaded.cs" />
+    <Compile Include="ns1\EventTrigger_Time.cs" />
+    <Compile Include="ns1\EventTrigger_UnitDamaged.cs" />
+    <Compile Include="ns1\EventTrigger_UnitDestroyed.cs" />
+    <Compile Include="ns1\EventTrigger_UnitDetected.cs" />
+    <Compile Include="ns1\EventTrigger_UnitEntersArea.cs" />
+    <Compile Include="ns1\EventTrigger_UnitRemainsInArea.cs" />
+    <Compile Include="ns1\Facility_AI.cs" />
+    <Compile Include="ns1\Facility_CommStuff.cs" />
+    <Compile Include="ns1\Facility_Kinematics.cs" />
+    <Compile Include="ns1\Goal.cs" />
+    <Compile Include="ns1\GuidedProjectile.cs" />
+    <Compile Include="ns1\GuidedProjectile_AI.cs" />
+    <Compile Include="ns1\GuidedProjectile_Kinematics.cs" />
+    <Compile Include="ns1\HGV.cs" />
+    <Compile Include="ns1\HGV_AI.cs" />
+    <Compile Include="ns1\HGV_Kinematics.cs" />
+    <Compile Include="ns1\IGeoPoint.cs" />
+    <Compile Include="ns1\MineClearingMission.cs" />
+    <Compile Include="ns1\MiningMission.cs" />
+    <Compile Include="ns1\Satellite_Damage.cs" />
+    <Compile Include="ns1\TankerMission.cs" />
+    <Compile Include="ns1\TaskPool.cs" />
+    <Compile Include="ns1\Torpedo.cs" />
+    <Compile Include="ns1\Torpedo_AI.cs" />
+    <Compile Include="ns1\Torpedo_Kinematics.cs" />
+    <Compile Include="ns1\WeaponSalvo.cs" />
+    <Compile Include="ns20\Class2017.cs" />
+    <Compile Include="ns20\Class2041.cs" />
+    <Compile Include="ns20\Class2042.cs" />
+    <Compile Include="ns20\Class2069.cs" />
+    <Compile Include="ns20\Class2070.cs" />
+    <Compile Include="ns20\Class2071.cs" />
+    <Compile Include="ns20\Class2072.cs" />
+    <Compile Include="ns20\Class2073.cs" />
+    <Compile Include="ns20\Class2074.cs" />
+    <Compile Include="ns20\Class2075.cs" />
+    <Compile Include="ns20\Class2076.cs" />
+    <Compile Include="ns20\Class2077.cs" />
+    <Compile Include="ns20\Class2078.cs" />
+    <Compile Include="ns20\Class2079.cs" />
+    <Compile Include="ns20\Class2080.cs" />
+    <Compile Include="ns20\Class2081.cs" />
+    <Compile Include="ns20\Class2082.cs" />
+    <Compile Include="ns20\Class2083.cs" />
+    <Compile Include="ns20\Class2084.cs" />
+    <Compile Include="ns20\Class2085.cs" />
+    <Compile Include="ns20\Class2086.cs" />
+    <Compile Include="ns20\Class2087.cs" />
+    <Compile Include="ns20\Class2088.cs" />
+    <Compile Include="ns20\Class2089.cs" />
+    <Compile Include="ns20\Class2090.cs" />
+    <Compile Include="ns20\Class2091.cs" />
+    <Compile Include="ns20\Class2092.cs" />
+    <Compile Include="ns20\Class2093.cs" />
+    <Compile Include="ns20\Class2094.cs" />
+    <Compile Include="ns20\Class2095.cs" />
+    <Compile Include="ns20\Class2096.cs" />
+    <Compile Include="ns20\Class2097.cs" />
+    <Compile Include="ns20\Class2098.cs" />
+    <Compile Include="ns20\Class2099.cs" />
+    <Compile Include="ns20\Class2100.cs" />
+    <Compile Include="ns21\Class2043.cs" />
+    <Compile Include="ns21\Class2044.cs" />
+    <Compile Include="ns21\Class2045.cs" />
+    <Compile Include="ns21\Class2046.cs" />
+    <Compile Include="ns21\Class2047.cs" />
+    <Compile Include="ns21\Class2048.cs" />
+    <Compile Include="ns21\Class2055.cs" />
+    <Compile Include="ns21\Class2101.cs" />
+    <Compile Include="ns21\Class2102.cs" />
+    <Compile Include="ns21\Class2103.cs" />
+    <Compile Include="ns21\Class2104.cs" />
+    <Compile Include="ns21\Class2105.cs" />
+    <Compile Include="ns21\Class2106.cs" />
+    <Compile Include="ns21\Class2107.cs" />
+    <Compile Include="ns21\Class2108.cs" />
+    <Compile Include="ns21\Class2109.cs" />
+    <Compile Include="ns21\Class2110.cs" />
+    <Compile Include="ns21\Class2111.cs" />
+    <Compile Include="ns21\Class2112.cs" />
+    <Compile Include="ns21\Class2113.cs" />
+    <Compile Include="ns21\Class2114.cs" />
+    <Compile Include="ns21\Class2115.cs" />
+    <Compile Include="ns21\Class2116.cs" />
+    <Compile Include="ns21\Class2117.cs" />
+    <Compile Include="ns21\Class2118.cs" />
+    <Compile Include="ns21\Class2119.cs" />
+    <Compile Include="ns21\Class2120.cs" />
+    <Compile Include="ns21\Class2121.cs" />
+    <Compile Include="ns21\Class2122.cs" />
+    <Compile Include="ns21\Class2123.cs" />
+    <Compile Include="ns21\Class2124.cs" />
+    <Compile Include="ns21\Class2125.cs" />
+    <Compile Include="ns21\Class2126.cs" />
+    <Compile Include="ns21\Class2127.cs" />
+    <Compile Include="ns21\Class2128.cs" />
+    <Compile Include="ns22\Class2056.cs" />
+    <Compile Include="ns22\Class2057.cs" />
+    <Compile Include="ns22\Class2129.cs" />
+    <Compile Include="ns22\Class2130.cs" />
+    <Compile Include="ns22\Class2131.cs" />
+    <Compile Include="ns22\Class2132.cs" />
+    <Compile Include="ns22\Class2133.cs" />
+    <Compile Include="ns22\Class2134.cs" />
+    <Compile Include="ns22\Class2135.cs" />
+    <Compile Include="ns22\Class2136.cs" />
+    <Compile Include="ns22\Class2137.cs" />
+    <Compile Include="ns22\Class2138.cs" />
+    <Compile Include="ns22\Class2139.cs" />
+    <Compile Include="ns22\Class2140.cs" />
+    <Compile Include="ns22\Class2141.cs" />
+    <Compile Include="ns22\Class2142.cs" />
+    <Compile Include="ns22\Class2143.cs" />
+    <Compile Include="ns22\Class2144.cs" />
+    <Compile Include="ns22\Class2145.cs" />
+    <Compile Include="ns22\Class2146.cs" />
+    <Compile Include="ns22\Class2147.cs" />
+    <Compile Include="ns22\Class2148.cs" />
+    <Compile Include="ns22\Class2149.cs" />
+    <Compile Include="ns22\Class2150.cs" />
+    <Compile Include="ns22\Class2151.cs" />
+    <Compile Include="ns22\Class2152.cs" />
+    <Compile Include="ns22\Class2153.cs" />
+    <Compile Include="ns22\Class2154.cs" />
+    <Compile Include="ns22\Class2155.cs" />
+    <Compile Include="ns22\Class2156.cs" />
+    <Compile Include="ns22\Class2157.cs" />
+    <Compile Include="ns22\Class2158.cs" />
+    <Compile Include="ns22\Class2159.cs" />
+    <Compile Include="ns22\Class2160.cs" />
+    <Compile Include="ns22\Class2161.cs" />
+    <Compile Include="ns23\ArrayListVisitor.cs" />
+    <Compile Include="ns23\Class2177.cs" />
+    <Compile Include="ns23\Class2248.cs" />
+    <Compile Include="ns23\Class2249.cs" />
+    <Compile Include="ns23\Class2251.cs" />
+    <Compile Include="ns23\Class2252.cs" />
+    <Compile Include="ns23\Class2253.cs" />
+    <Compile Include="ns23\Class2254.cs" />
+    <Compile Include="ns23\Class2255.cs" />
+    <Compile Include="ns23\Class2256.cs" />
+    <Compile Include="ns23\Class2257.cs" />
+    <Compile Include="ns23\Class2258.cs" />
+    <Compile Include="ns23\Class2259.cs" />
+    <Compile Include="ns23\Class2261.cs" />
+    <Compile Include="ns23\Class2263.cs" />
+    <Compile Include="ns23\Class2269.cs" />
+    <Compile Include="ns23\Class2272.cs" />
+    <Compile Include="ns23\Class2273.cs" />
+    <Compile Include="ns23\Class2274.cs" />
+    <Compile Include="ns23\Class2275.cs" />
+    <Compile Include="ns23\Class2276.cs" />
+    <Compile Include="ns23\Class2282.cs" />
+    <Compile Include="ns23\Class2283.cs" />
+    <Compile Include="ns23\ClassNotSupportedException.cs" />
+    <Compile Include="ns23\DoubleBits.cs" />
+    <Compile Include="ns23\Interface43.cs" />
+    <Compile Include="ns23\Interface45.cs" />
+    <Compile Include="ns23\Interface47.cs" />
+    <Compile Include="ns23\Interface48.cs" />
+    <Compile Include="ns23\ISpatialIndex.cs" />
+    <Compile Include="ns23\Key.cs" />
+    <Compile Include="ns23\Node.cs" />
+    <Compile Include="ns23\NodeBase.cs" />
+    <Compile Include="ns23\Quadtree.cs" />
+    <Compile Include="ns23\Root.cs" />
+    <Compile Include="ns24\Class2183.cs" />
+    <Compile Include="ns24\Class2188.cs" />
+    <Compile Include="ns24\Class2191.cs" />
+    <Compile Include="ns24\Class2192.cs" />
+    <Compile Include="ns24\Class2193.cs" />
+    <Compile Include="ns24\Class2195.cs" />
+    <Compile Include="ns24\Class2196.cs" />
+    <Compile Include="ns24\Class2198.cs" />
+    <Compile Include="ns24\Class2199.cs" />
+    <Compile Include="ns24\Class2202.cs" />
+    <Compile Include="ns24\Class2203.cs" />
+    <Compile Include="ns24\Class2205.cs" />
+    <Compile Include="ns24\Class2208.cs" />
+    <Compile Include="ns24\Class2211.cs" />
+    <Compile Include="ns24\Class2212.cs" />
+    <Compile Include="ns24\Class2213.cs" />
+    <Compile Include="ns24\Class2214.cs" />
+    <Compile Include="ns24\EdgeList.cs" />
+    <Compile Include="ns24\EdgeSetIntersector.cs" />
+    <Compile Include="ns24\EnumerableExt.cs" />
+    <Compile Include="ns24\Exception17.cs" />
+    <Compile Include="ns24\GeometryGraph.cs" />
+    <Compile Include="ns24\IBasicGeometry.cs" />
+    <Compile Include="ns24\IBasicLineString.cs" />
+    <Compile Include="ns24\IBasicPoint.cs" />
+    <Compile Include="ns24\IBasicPolygon.cs" />
+    <Compile Include="ns24\ICoordinate.cs" />
+    <Compile Include="ns24\ICoordinateFilter.cs" />
+    <Compile Include="ns24\IGeometryComponentFilter.cs" />
+    <Compile Include="ns24\IGeometryFilter.cs" />
+    <Compile Include="ns24\ILineSegmentBase.cs" />
+    <Compile Include="ns24\IMultiLineString.cs" />
+    <Compile Include="ns24\Interface29.cs" />
+    <Compile Include="ns24\Interface40.cs" />
+    <Compile Include="ns24\SegmentIntersector.cs" />
+    <Compile Include="ns25\CgAlgorithms.cs" />
+    <Compile Include="ns25\Class2200.cs" />
+    <Compile Include="ns25\Class2216.cs" />
+    <Compile Include="ns25\Class2217.cs" />
+    <Compile Include="ns25\Class2218.cs" />
+    <Compile Include="ns25\Class2221.cs" />
+    <Compile Include="ns25\Class2222.cs" />
+    <Compile Include="ns25\Class2223.cs" />
+    <Compile Include="ns25\Class2224.cs" />
+    <Compile Include="ns25\Class2226.cs" />
+    <Compile Include="ns25\Class2227.cs" />
+    <Compile Include="ns25\Class2230.cs" />
+    <Compile Include="ns25\Class2231.cs" />
+    <Compile Include="ns25\Class2232.cs" />
+    <Compile Include="ns25\Class2236.cs" />
+    <Compile Include="ns25\Class2238.cs" />
+    <Compile Include="ns25\Class2241.cs" />
+    <Compile Include="ns25\Class2242.cs" />
+    <Compile Include="ns25\Class2245.cs" />
+    <Compile Include="ns25\Class2246.cs" />
+    <Compile Include="ns25\Enum158.cs" />
+    <Compile Include="ns25\Exception18.cs" />
+    <Compile Include="ns25\Exception21.cs" />
+    <Compile Include="ns25\Exception22.cs" />
+    <Compile Include="ns25\GeometryTransformer.cs" />
+    <Compile Include="ns25\Interface42.cs" />
+    <Compile Include="ns25\IntersectionType.cs" />
+    <Compile Include="ns25\LineIntersector.cs" />
+    <Compile Include="ns25\MultiLineString.cs" />
+    <Compile Include="ns25\PolygonException.cs" />
+    <Compile Include="ns25\RobustDeterminant.cs" />
+    <Compile Include="ns25\RobustLineIntersector.cs" />
+    <Compile Include="ns25\TopologyException.cs" />
+    <Compile Include="ns25\TopologyText.Designer.cs">
+      <DependentUpon>TopologyText.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ns25\WktWriter.cs" />
+    <Compile Include="ns26\Class2194.cs" />
+    <Compile Include="ns26\Class2197.cs" />
+    <Compile Include="ns26\Class2201.cs" />
+    <Compile Include="ns26\Class2206.cs" />
+    <Compile Include="ns26\Class2207.cs" />
+    <Compile Include="ns26\Class2219.cs" />
+    <Compile Include="ns26\Class2220.cs" />
+    <Compile Include="ns26\Class2225.cs" />
+    <Compile Include="ns26\Class2318.cs" />
+    <Compile Include="ns26\Class2321.cs" />
+    <Compile Include="ns26\Class2322.cs" />
+    <Compile Include="ns26\Class2324.cs" />
+    <Compile Include="ns26\Class2325.cs" />
+    <Compile Include="ns26\Class2326.cs" />
+    <Compile Include="ns26\Class2327.cs" />
+    <Compile Include="ns26\Class2328.cs" />
+    <Compile Include="ns26\Class2329.cs" />
+    <Compile Include="ns26\Class2330.cs" />
+    <Compile Include="ns26\Class2332.cs" />
+    <Compile Include="ns26\Class2334.cs" />
+    <Compile Include="ns26\Class2335.cs" />
+    <Compile Include="ns26\Class2336.cs" />
+    <Compile Include="ns26\Class2337.cs" />
+    <Compile Include="ns26\Class2340.cs" />
+    <Compile Include="ns26\Class2343.cs" />
+    <Compile Include="ns26\Class2344.cs" />
+    <Compile Include="ns26\Class2345.cs" />
+    <Compile Include="ns26\DouglasPeuckerLineSimplifier.cs" />
+    <Compile Include="ns26\DouglasPeuckerSimplifier.cs" />
+    <Compile Include="ns26\Exception25.cs" />
+    <Compile Include="ns26\Exception26.cs" />
+    <Compile Include="ns26\Exception27.cs" />
+    <Compile Include="ns26\IsValidOp.cs" />
+    <Compile Include="ns26\TopologyValidationError.cs" />
+    <Compile Include="ns26\TopologyValidationErrorType.cs" />
+    <Compile Include="ns27\BufferBuilder.cs" />
+    <Compile Include="ns27\BufferOp.cs" />
+    <Compile Include="ns27\Class2284.cs" />
+    <Compile Include="ns27\Class2285.cs" />
+    <Compile Include="ns27\Class2286.cs" />
+    <Compile Include="ns27\Class2287.cs" />
+    <Compile Include="ns27\Class2288.cs" />
+    <Compile Include="ns27\Class2289.cs" />
+    <Compile Include="ns27\Class2290.cs" />
+    <Compile Include="ns27\Class2291.cs" />
+    <Compile Include="ns27\Class2292.cs" />
+    <Compile Include="ns27\Class2293.cs" />
+    <Compile Include="ns27\Class2294.cs" />
+    <Compile Include="ns27\Class2295.cs" />
+    <Compile Include="ns27\Class2296.cs" />
+    <Compile Include="ns27\Class2297.cs" />
+    <Compile Include="ns27\Class2299.cs" />
+    <Compile Include="ns27\Class2300.cs" />
+    <Compile Include="ns27\Class2303.cs" />
+    <Compile Include="ns27\Class2304.cs" />
+    <Compile Include="ns27\Class2305.cs" />
+    <Compile Include="ns27\Class2306.cs" />
+    <Compile Include="ns27\Class2307.cs" />
+    <Compile Include="ns27\Class2309.cs" />
+    <Compile Include="ns27\Class2310.cs" />
+    <Compile Include="ns27\Class2311.cs" />
+    <Compile Include="ns27\Class2312.cs" />
+    <Compile Include="ns27\Class2313.cs" />
+    <Compile Include="ns27\Class2314.cs" />
+    <Compile Include="ns27\Class2315.cs" />
+    <Compile Include="ns27\Class2316.cs" />
+    <Compile Include="ns27\Class2317.cs" />
+    <Compile Include="ns27\Class2319.cs" />
+    <Compile Include="ns27\Class2320.cs" />
+    <Compile Include="ns27\Exception24.cs" />
+    <Compile Include="ns28\Class2347.cs" />
+    <Compile Include="ns28\Class2348.cs" />
+    <Compile Include="ns28\Class2350.cs" />
+    <Compile Include="ns28\Class2351.cs" />
+    <Compile Include="ns28\Class2352.cs" />
+    <Compile Include="ns28\Class2353.cs" />
+    <Compile Include="ns28\Class2354.cs" />
+    <Compile Include="ns28\Class2355.cs" />
+    <Compile Include="ns28\Class2356.cs" />
+    <Compile Include="ns28\Class2357.cs" />
+    <Compile Include="ns28\Class2358.cs" />
+    <Compile Include="ns28\Class2359.cs" />
+    <Compile Include="ns28\Class2360.cs" />
+    <Compile Include="ns28\Class2361.cs" />
+    <Compile Include="ns28\Class2362.cs" />
+    <Compile Include="ns28\Class2363.cs" />
+    <Compile Include="ns28\Class2364.cs" />
+    <Compile Include="ns28\Class2365.cs" />
+    <Compile Include="ns28\Class2366.cs" />
+    <Compile Include="ns28\Enum162.cs" />
+    <Compile Include="ns28\Enum163.cs" />
+    <Compile Include="ns28\Enum164.cs" />
+    <Compile Include="ns28\Enum165.cs" />
+    <Compile Include="ns28\Enum166.cs" />
+    <Compile Include="ns28\Enum167.cs" />
+    <Compile Include="ns28\Enum168.cs" />
+    <Compile Include="ns28\Enum169.cs" />
+    <Compile Include="ns28\Enum170.cs" />
+    <Compile Include="ns28\Enum171.cs" />
+    <Compile Include="ns28\Exception28.cs" />
+    <Compile Include="ns28\Exception29.cs" />
+    <Compile Include="ns28\HexConverter.cs" />
+    <Compile Include="ns28\Struct68.cs" />
+    <Compile Include="ns28\Struct69.cs" />
+    <Compile Include="ns28\Struct70.cs" />
+    <Compile Include="ns29\Class2367.cs" />
+    <Compile Include="ns29\Class2368.cs" />
+    <Compile Include="ns29\Class2369.cs" />
+    <Compile Include="ns29\Class2370.cs" />
+    <Compile Include="ns29\Class2371.cs" />
+    <Compile Include="ns29\Class2372.cs" />
+    <Compile Include="ns29\Class2373.cs" />
+    <Compile Include="ns29\Class2374.cs" />
+    <Compile Include="ns29\Class2375.cs" />
+    <Compile Include="ns29\Class2376.cs" />
+    <Compile Include="ns29\Class2377.cs" />
+    <Compile Include="ns29\Class2379.cs" />
+    <Compile Include="ns29\Class2380.cs" />
+    <Compile Include="ns29\Class2381.cs" />
+    <Compile Include="ns29\Class2385.cs" />
+    <Compile Include="ns29\Class2386.cs" />
+    <Compile Include="ns29\Class2387.cs" />
+    <Compile Include="ns29\Delegate39.cs" />
+    <Compile Include="ns29\Delegate40.cs" />
+    <Compile Include="ns29\Delegate41.cs" />
+    <Compile Include="ns29\Delegate42.cs" />
+    <Compile Include="ns29\Delegate43.cs" />
+    <Compile Include="ns29\Delegate44.cs" />
+    <Compile Include="ns29\Enum172.cs" />
+    <Compile Include="ns29\EventArgs3.cs" />
+    <Compile Include="ns29\EventArgs4.cs" />
+    <Compile Include="ns29\EventArgs5.cs" />
+    <Compile Include="ns29\EventArgs6.cs" />
+    <Compile Include="ns29\IConfig.cs" />
+    <Compile Include="ns29\Interface49.cs" />
+    <Compile Include="ns29\Interface51.cs" />
+    <Compile Include="ns29\TreeGridViewRow.cs" />
+    <Compile Include="ns29\TreeGridViewRowNodes.cs" />
+    <Compile Include="ns29\TreeGridViewTextBoxCell.cs" />
+    <Compile Include="ns29\TreeGridViewTextBoxColumn.cs" />
+    <Compile Include="ns2\Attribute6.cs" />
+    <Compile Include="ns2\CIC.cs" />
+    <Compile Include="ns2\Configuration.cs" />
+    <Compile Include="ns2\Exception0.cs" />
+    <Compile Include="ns2\Facility_Navigator.cs" />
+    <Compile Include="ns2\Facility_Sensory.cs" />
+    <Compile Include="ns2\Facility_Weaponry.cs" />
+    <Compile Include="ns2\Group_AI.cs" />
+    <Compile Include="ns2\Group_AirOps.cs" />
+    <Compile Include="ns2\Group_CommStuff.cs" />
+    <Compile Include="ns2\Group_Navigator.cs" />
+    <Compile Include="ns2\Group_Sensory.cs" />
+    <Compile Include="ns2\Group_Weaponry.cs" />
+    <Compile Include="ns2\MapProfile.cs" />
+    <Compile Include="ns2\Patrol.cs" />
+    <Compile Include="ns2\Platform.cs" />
+    <Compile Include="ns2\Posture.cs" />
+    <Compile Include="ns2\PressureHull.cs" />
+    <Compile Include="ns2\Rudder.cs" />
+    <Compile Include="ns2\Satellite_Kinematics.cs" />
+    <Compile Include="ns2\Ship_CommStuff.cs" />
+    <Compile Include="ns2\Ship_Damage.cs" />
+    <Compile Include="ns2\Ship_Kinematics.cs" />
+    <Compile Include="ns2\Ship_Navigator.cs" />
+    <Compile Include="ns2\Ship_Sensory.cs" />
+    <Compile Include="ns2\Ship_Weaponry.cs" />
+    <Compile Include="ns2\Subject.cs" />
+    <Compile Include="ns2\Submarine_CommStuff.cs" />
+    <Compile Include="ns2\Submarine_Damage.cs" />
+    <Compile Include="ns2\Submarine_Navigator.cs" />
+    <Compile Include="ns2\Submarine_Sensory.cs" />
+    <Compile Include="ns2\SupportMission.cs" />
+    <Compile Include="ns2\Target.cs" />
+    <Compile Include="ns2\WeaponAssignment.cs" />
+    <Compile Include="ns2\WeaponTarget.cs" />
+    <Compile Include="ns30\Class2388.cs" />
+    <Compile Include="ns30\Class2389.cs" />
+    <Compile Include="ns30\Class2390.cs" />
+    <Compile Include="ns30\Class2391.cs" />
+    <Compile Include="ns30\Class2392.cs" />
+    <Compile Include="ns30\Class2393.cs" />
+    <Compile Include="ns30\Class2394.cs" />
+    <Compile Include="ns30\Class2395.cs" />
+    <Compile Include="ns30\Class2396.cs" />
+    <Compile Include="ns30\Class2397.cs" />
+    <Compile Include="ns30\Class2398.cs" />
+    <Compile Include="ns30\Class2399.cs" />
+    <Compile Include="ns30\Class2400.cs" />
+    <Compile Include="ns30\Class2401.cs" />
+    <Compile Include="ns30\Class2402.cs" />
+    <Compile Include="ns30\Class2403.cs" />
+    <Compile Include="ns30\Class2404.cs" />
+    <Compile Include="ns30\Class2405.cs" />
+    <Compile Include="ns30\Class2406.cs" />
+    <Compile Include="ns30\Class2407.cs" />
+    <Compile Include="ns30\Class2408.cs" />
+    <Compile Include="ns30\Class2409.cs" />
+    <Compile Include="ns30\Class2410.cs" />
+    <Compile Include="ns30\Interface52.cs" />
+    <Compile Include="ns30\Interface53.cs" />
+    <Compile Include="ns30\Interface54.cs" />
+    <Compile Include="ns30\Interface55.cs" />
+    <Compile Include="ns30\Interface56.cs" />
+    <Compile Include="ns30\Interface57.cs" />
+    <Compile Include="ns30\Interface58.cs" />
+    <Compile Include="ns30\Interface59.cs" />
+    <Compile Include="ns30\Interface60.cs" />
+    <Compile Include="ns30\Interface61.cs" />
+    <Compile Include="ns30\Interface62.cs" />
+    <Compile Include="ns30\Interface63.cs" />
+    <Compile Include="ns31\Class2411.cs" />
+    <Compile Include="ns31\Class2412.cs" />
+    <Compile Include="ns31\Class2413.cs" />
+    <Compile Include="ns31\Class2414.cs" />
+    <Compile Include="ns31\Class2415.cs" />
+    <Compile Include="ns31\Class2416.cs" />
+    <Compile Include="ns31\Class2417.cs" />
+    <Compile Include="ns31\Class2418.cs" />
+    <Compile Include="ns31\Class2419.cs" />
+    <Compile Include="ns31\Class2420.cs" />
+    <Compile Include="ns31\Class2426.cs" />
+    <Compile Include="ns31\Class2435.cs" />
+    <Compile Include="ns31\Class2436.cs" />
+    <Compile Include="ns31\Class2437.cs" />
+    <Compile Include="ns31\Class2438.cs" />
+    <Compile Include="ns31\Class2439.cs" />
+    <Compile Include="ns31\Enum178.cs" />
+    <Compile Include="ns31\Exception30.cs" />
+    <Compile Include="ns31\Exception31.cs" />
+    <Compile Include="ns31\Stream1.cs" />
+    <Compile Include="ns31\Stream2.cs" />
+    <Compile Include="ns31\Stream3.cs" />
+    <Compile Include="ns32\Class2441.cs" />
+    <Compile Include="ns32\Class2442.cs" />
+    <Compile Include="ns32\Class2443.cs" />
+    <Compile Include="ns32\Class2444.cs" />
+    <Compile Include="ns32\Class2445.cs" />
+    <Compile Include="ns32\Class2446.cs" />
+    <Compile Include="ns32\Class2447.cs" />
+    <Compile Include="ns32\Class2449.cs" />
+    <Compile Include="ns32\Class2450.cs" />
+    <Compile Include="ns32\Class2451.cs" />
+    <Compile Include="ns32\Class2452.cs" />
+    <Compile Include="ns32\Class2453.cs" />
+    <Compile Include="ns32\Class2454.cs" />
+    <Compile Include="ns32\Class2455.cs" />
+    <Compile Include="ns32\Class2456.cs" />
+    <Compile Include="ns32\Class2457.cs" />
+    <Compile Include="ns32\Class2458.cs" />
+    <Compile Include="ns32\Class2459.cs" />
+    <Compile Include="ns32\Class2460.cs" />
+    <Compile Include="ns32\Class2461.cs" />
+    <Compile Include="ns32\Class2462.cs" />
+    <Compile Include="ns32\Class2463.cs" />
+    <Compile Include="ns32\Class2464.cs" />
+    <Compile Include="ns32\Class2471.cs" />
+    <Compile Include="ns32\Class2472.cs" />
+    <Compile Include="ns32\Class2474.cs" />
+    <Compile Include="ns32\Command.Resources.Designer.cs">
+      <DependentUpon>Command.Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ns32\CommandApp.cs" />
+    <Compile Include="ns32\CommandFactory.cs" />
+    <Compile Include="ns32\Delegate47.cs" />
+    <Compile Include="ns32\Delegate48.cs" />
+    <Compile Include="ns32\Enum179.cs" />
+    <Compile Include="ns32\EventArgs7.cs" />
+    <Compile Include="ns32\FlightPlanWaypoints.Designer.cs">
+      <DependentUpon>FlightPlanWaypoints.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ns32\MyComputer.cs" />
+    <Compile Include="ns33\AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\AddMagazine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\AddMagazine.Designer.cs">
+      <DependentUpon>AddMagazine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\AreaEditor.Designer.cs">
+      <DependentUpon>AreaEditor.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ns33\CampaignEditorWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\CampaignEditorWindow.Designer.cs">
+      <DependentUpon>CampaignEditorWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\CampaignEnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\CampaignEnd.Designer.cs">
+      <DependentUpon>CampaignEnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\CampaignScenarioWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\CampaignScenarioWindow.Designer.cs">
+      <DependentUpon>CampaignScenarioWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\CargoOps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\CargoOps.Designer.cs">
+      <DependentUpon>CargoOps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\Class2475.cs" />
+    <Compile Include="ns33\Class2476.cs" />
+    <Compile Include="ns33\Class2498.cs" />
+    <Compile Include="ns33\CommandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\CustomLayersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\CustomLayersForm.Designer.cs">
+      <DependentUpon>CustomLayersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\DamageControlWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\DamageControlWindow.Designer.cs">
+      <DependentUpon>DamageControlWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\EditCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\EditCargo.Designer.cs">
+      <DependentUpon>EditCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\EditTrigger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\EditTrigger.Designer.cs">
+      <DependentUpon>EditTrigger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\EmconControl.Designer.cs">
+      <DependentUpon>EmconControl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ns33\FlightPlanEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\FlightPlanEditor.Designer.cs">
+      <DependentUpon>FlightPlanEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\FlightPlanErrors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\FlightPlanErrors.Designer.cs">
+      <DependentUpon>FlightPlanErrors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\FlightPlans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\FlightPlans.Designer.cs">
+      <DependentUpon>FlightPlans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\FlightPlanTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\FlightPlanTime.Designer.cs">
+      <DependentUpon>FlightPlanTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\Hotkeys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\Hotkeys.Designer.cs">
+      <DependentUpon>Hotkeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\InsufficientLicenseWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\InsufficientLicenseWindow.Designer.cs">
+      <DependentUpon>InsufficientLicenseWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\LicenseFile.cs" />
+    <Compile Include="ns33\LoadScenarioAttachment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\LoadScenarioAttachment.Designer.cs">
+      <DependentUpon>LoadScenarioAttachment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\PlatformComponentArcControl.Designer.cs">
+      <DependentUpon>PlatformComponentArcControl.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ns33\PowerSchemeManager.cs" />
+    <Compile Include="ns33\ReadyAircraft.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\ReadyAircraft.Designer.cs">
+      <DependentUpon>ReadyAircraft.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\RealismDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\RealismDialog.Designer.cs">
+      <DependentUpon>RealismDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\ScenAttachmentsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\ScenAttachmentsWindow.Designer.cs">
+      <DependentUpon>ScenAttachmentsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\SteamPublishScenarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\SteamPublishScenarioForm.Designer.cs">
+      <DependentUpon>SteamPublishScenarioForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\SteamSession.cs" />
+    <Compile Include="ns33\SteamWorkshop.cs" />
+    <Compile Include="ns33\TimeToReadyWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\TimeToReadyWindow.Designer.cs">
+      <DependentUpon>TimeToReadyWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\TitleAndDescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns33\TitleAndDescription.Designer.cs">
+      <DependentUpon>TitleAndDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns33\UnhandledExceptionHandler.cs" />
+    <Compile Include="ns34\AddMount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\AddMount.Designer.cs">
+      <DependentUpon>AddMount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\AddNewUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\AddNewUnit.Designer.cs">
+      <DependentUpon>AddNewUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\AddSensor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\AddSensor.Designer.cs">
+      <DependentUpon>AddSensor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\AddSide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\AddSide.Designer.cs">
+      <DependentUpon>AddSide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\AddWeaponRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\AddWeaponRecord.Designer.cs">
+      <DependentUpon>AddWeaponRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\ContactReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\ContactReport.Designer.cs">
+      <DependentUpon>ContactReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\EditBriefing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\EditBriefing.Designer.cs">
+      <DependentUpon>EditBriefing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\EditWeather.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\EditWeather.Designer.cs">
+      <DependentUpon>EditWeather.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\Evaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\Evaluation.Designer.cs">
+      <DependentUpon>Evaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\FixedFacilityOrientation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\FixedFacilityOrientation.Designer.cs">
+      <DependentUpon>FixedFacilityOrientation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\FormationEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\FormationEditor.Designer.cs">
+      <DependentUpon>FormationEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\Form_QuickTurnaround.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\Form_QuickTurnaround.Designer.cs">
+      <DependentUpon>Form_QuickTurnaround.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\Form_SetFuelAndAirborneTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\Form_SetFuelAndAirborneTime.Designer.cs">
+      <DependentUpon>Form_SetFuelAndAirborneTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\LicenseChecker.cs" />
+    <Compile Include="ns34\LoadGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\LoadGroup.Designer.cs">
+      <DependentUpon>LoadGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\LoadSaveProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\LoadSaveProgress.Designer.cs">
+      <DependentUpon>LoadSaveProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\Losses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\Losses.Designer.cs">
+      <DependentUpon>Losses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\MCMWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\MCMWindow.Designer.cs">
+      <DependentUpon>MCMWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\Migration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\Migration.Designer.cs">
+      <DependentUpon>Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\MinefieldForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\MinefieldForm.Designer.cs">
+      <DependentUpon>MinefieldForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\NewMessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\NewMessageForm.Designer.cs">
+      <DependentUpon>NewMessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\Options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\Options.Designer.cs">
+      <DependentUpon>Options.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\RecorderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\RecorderForm.Designer.cs">
+      <DependentUpon>RecorderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\RegressionTests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\RegressionTests.Designer.cs">
+      <DependentUpon>RegressionTests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\RenameObject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\RenameObject.Designer.cs">
+      <DependentUpon>RenameObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\RenameSide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\RenameSide.Designer.cs">
+      <DependentUpon>RenameSide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\ResumeFromSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\ResumeFromSave.Designer.cs">
+      <DependentUpon>ResumeFromSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\ScenarioTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\ScenarioTitle.Designer.cs">
+      <DependentUpon>ScenarioTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\ScoringWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\ScoringWindow.Designer.cs">
+      <DependentUpon>ScoringWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\SelectLoadout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\SelectLoadout.Designer.cs">
+      <DependentUpon>SelectLoadout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\SpeedAlt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\SpeedAlt.Designer.cs">
+      <DependentUpon>SpeedAlt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\StartGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\StartGame.Designer.cs">
+      <DependentUpon>StartGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\TimesAndDuration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\TimesAndDuration.Designer.cs">
+      <DependentUpon>TimesAndDuration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns34\VideoWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns34\VideoWindow.Designer.cs">
+      <DependentUpon>VideoWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns35\Attribute11.cs" />
+    <Compile Include="ns35\Attribute12.cs" />
+    <Compile Include="ns35\Attribute13.cs" />
+    <Compile Include="ns35\Class2524.cs" />
+    <Compile Include="ns35\Class2525.cs" />
+    <Compile Include="ns35\Class2526.cs" />
+    <Compile Include="ns35\Class2527.cs" />
+    <Compile Include="ns35\Class2529.cs" />
+    <Compile Include="ns35\Class2530.cs" />
+    <Compile Include="ns35\Class2531.cs" />
+    <Compile Include="ns35\Class2534.cs" />
+    <Compile Include="ns35\Class2535.cs" />
+    <Compile Include="ns35\Class2536.cs" />
+    <Compile Include="ns35\Class2537.cs" />
+    <Compile Include="ns35\Class2538.cs" />
+    <Compile Include="ns35\Class2541.cs" />
+    <Compile Include="ns35\Exception32.cs" />
+    <Compile Include="ns35\Exception33.cs" />
+    <Compile Include="ns35\MainSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ns35\MainSplash.Designer.cs">
+      <DependentUpon>MainSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ns35\WorldWindUtil.cs" />
+    <Compile Include="ns3\CachedDataBase.cs" />
+    <Compile Include="ns3\Class227.cs" />
+    <Compile Include="ns3\Class232.cs" />
+    <Compile Include="ns3\Class237.cs" />
+    <Compile Include="ns3\Class238.cs" />
+    <Compile Include="ns3\Class239.cs" />
+    <Compile Include="ns3\Class240.cs" />
+    <Compile Include="ns3\Class242.cs" />
+    <Compile Include="ns3\Class244.cs" />
+    <Compile Include="ns3\Class245.cs" />
+    <Compile Include="ns3\Class256.cs" />
+    <Compile Include="ns3\Class258.cs" />
+    <Compile Include="ns3\Class260.cs" />
+    <Compile Include="ns3\Class263.cs" />
+    <Compile Include="ns3\Class265.cs" />
+    <Compile Include="ns3\Class266.cs" />
+    <Compile Include="ns3\DBCryptoService.cs" />
+    <Compile Include="ns3\DBID_HarshSet.cs" />
+    <Compile Include="ns3\EventExporters.cs" />
+    <Compile Include="ns3\EventExport_CSV.cs" />
+    <Compile Include="ns3\EventExport_MSAccess.cs" />
+    <Compile Include="ns3\EventExport_Tacview1x.cs" />
+    <Compile Include="ns3\EventExport_Tacview2x.cs" />
+    <Compile Include="ns3\EventExport_XMLFile.cs" />
+    <Compile Include="ns3\Exception1.cs" />
+    <Compile Include="ns3\GeoPointGenerator.cs" />
+    <Compile Include="ns3\RangeCalculator.cs" />
+    <Compile Include="ns3\Satellite_Orbit.cs" />
+    <Compile Include="ns3\ScenarioArrayUtil.cs" />
+    <Compile Include="ns3\SQLiteDataBase.cs" />
+    <Compile Include="ns3\StringComparer.cs" />
+    <Compile Include="ns3\Weapon_Damage.cs" />
+    <Compile Include="ns3\Weapon_Kinematics.cs" />
+    <Compile Include="ns3\Weapon_Navigator.cs" />
+    <Compile Include="ns3\Weapon_Sensory.cs" />
+    <Compile Include="ns4\ArcticSeaIce.cs" />
+    <Compile Include="ns4\Attribute0.cs" />
+    <Compile Include="ns4\Attribute1.cs" />
+    <Compile Include="ns4\Attribute2.cs" />
+    <Compile Include="ns4\Attribute3.cs" />
+    <Compile Include="ns4\Class267.cs" />
+    <Compile Include="ns4\Class270.cs" />
+    <Compile Include="ns4\Class272.cs" />
+    <Compile Include="ns4\Class273.cs" />
+    <Compile Include="ns4\Class281.cs" />
+    <Compile Include="ns4\Class290.cs" />
+    <Compile Include="ns4\Class312.cs" />
+    <Compile Include="ns4\Class313.cs" />
+    <Compile Include="ns4\Class323.cs" />
+    <Compile Include="ns4\Class324.cs" />
+    <Compile Include="ns4\Class356.cs" />
+    <Compile Include="ns4\Class358.cs" />
+    <Compile Include="ns4\Class363.cs" />
+    <Compile Include="ns4\Class372.cs" />
+    <Compile Include="ns4\Class375.cs" />
+    <Compile Include="ns4\Class376.cs" />
+    <Compile Include="ns4\Class377.cs" />
+    <Compile Include="ns4\Class378.cs" />
+    <Compile Include="ns4\Class379.cs" />
+    <Compile Include="ns4\Class380.cs" />
+    <Compile Include="ns4\Class382.cs" />
+    <Compile Include="ns4\ECM.cs" />
+    <Compile Include="ns4\Exception2.cs" />
+    <Compile Include="ns4\GISElevations.cs" />
+    <Compile Include="ns4\Interface2.cs" />
+    <Compile Include="ns4\ScenarioSnapshots.cs" />
+    <Compile Include="ns4\ScenarioUnits.cs" />
+    <Compile Include="ns4\SimConfiguration.cs" />
+    <Compile Include="ns4\SonarEnvironment.cs" />
+    <Compile Include="ns4\StrikePlanner.cs" />
+    <Compile Include="ns6\Class386.cs" />
+    <Compile Include="ns6\Class387.cs" />
+    <Compile Include="ns6\Class390.cs" />
+    <Compile Include="ns6\Class391.cs" />
+    <Compile Include="ns6\Class392.cs" />
+    <Compile Include="ns6\Class393.cs" />
+    <Compile Include="ns6\Class395.cs" />
+    <Compile Include="ns6\Class396.cs" />
+    <Compile Include="ns6\Class397.cs" />
+    <Compile Include="ns6\Class398.cs" />
+    <Compile Include="ns6\Class399.cs" />
+    <Compile Include="ns6\Class400.cs" />
+    <Compile Include="ns6\Class401.cs" />
+    <Compile Include="ns6\Class402.cs" />
+    <Compile Include="ns6\Class403.cs" />
+    <Compile Include="ns6\Class404.cs" />
+    <Compile Include="ns6\Class405.cs" />
+    <Compile Include="ns6\Class406.cs" />
+    <Compile Include="ns6\Enum117.cs" />
+    <Compile Include="ns6\Enum118.cs" />
+    <Compile Include="ns6\Enum119.cs" />
+    <Compile Include="ns6\Exception3.cs" />
+    <Compile Include="ns6\Interface6.cs" />
+    <Compile Include="ns6\Interface7.cs" />
+    <Compile Include="ns6\Struct48.cs" />
+    <Compile Include="ns6\Struct49.cs" />
+    <Compile Include="ns6\WorldWindow.Designer.cs">
+      <DependentUpon>WorldWindow.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="PathFinderApp\Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Pavonis\COM\CommandGroup.cs" />
+    <Compile Include="Pavonis\COM\CommandId.cs" />
+    <Compile Include="Pavonis\COM\CommandOption.cs" />
+    <Compile Include="Pavonis\COM\HRESULT.cs" />
+    <Compile Include="Pavonis\COM\IOleCommandTarget\IOleCommandTarget.cs" />
+    <Compile Include="Pavonis\COM\OLECMD.cs" />
+    <Compile Include="personType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="rteType.cs" />
+    <Compile Include="Sharp3D\Math\Core\ColorF.cs" />
+    <Compile Include="Sharp3D\Math\Core\ComplexD.cs" />
+    <Compile Include="Sharp3D\Math\Core\ComplexDArrayList.cs" />
+    <Compile Include="Sharp3D\Math\Core\ComplexF.cs" />
+    <Compile Include="Sharp3D\Math\Core\ComplexFArrayList.cs" />
+    <Compile Include="Sharp3D\Math\Core\DoubleArrayList.cs" />
+    <Compile Include="Sharp3D\Math\Core\FloatArrayList.cs" />
+    <Compile Include="Sharp3D\Math\Core\IntArrayList.cs" />
+    <Compile Include="Sharp3D\Math\Core\Matrix2D.cs" />
+    <Compile Include="Sharp3D\Math\Core\Matrix2F.cs" />
+    <Compile Include="Sharp3D\Math\Core\Matrix3D.cs" />
+    <Compile Include="Sharp3D\Math\Core\Matrix3F.cs" />
+    <Compile Include="Sharp3D\Math\Core\Matrix4D.cs" />
+    <Compile Include="Sharp3D\Math\Core\Matrix4F.cs" />
+    <Compile Include="Sharp3D\Math\Core\MatrixD.cs" />
+    <Compile Include="Sharp3D\Math\Core\MatrixF.cs" />
+    <Compile Include="Sharp3D\Math\Core\ParseException.cs" />
+    <Compile Include="Sharp3D\Math\Core\QuaternionD.cs" />
+    <Compile Include="Sharp3D\Math\Core\QuaternionDArrayList.cs" />
+    <Compile Include="Sharp3D\Math\Core\QuaternionF.cs" />
+    <Compile Include="Sharp3D\Math\Core\QuaternionFArrayList.cs" />
+    <Compile Include="Sharp3D\Math\Core\Sharp3DMathException.cs" />
+    <Compile Include="Sharp3D\Math\Core\Vector2D.cs" />
+    <Compile Include="Sharp3D\Math\Core\Vector2DArrayList.cs" />
+    <Compile Include="Sharp3D\Math\Core\Vector2F.cs" />
+    <Compile Include="Sharp3D\Math\Core\Vector2FArrayList.cs" />
+    <Compile Include="Sharp3D\Math\Core\Vector3D.cs" />
+    <Compile Include="Sharp3D\Math\Core\Vector3DArrayList.cs" />
+    <Compile Include="Sharp3D\Math\Core\Vector3F.cs" />
+    <Compile Include="Sharp3D\Math\Core\Vector3FArrayList.cs" />
+    <Compile Include="Sharp3D\Math\Core\Vector4D.cs" />
+    <Compile Include="Sharp3D\Math\Core\Vector4DArrayList.cs" />
+    <Compile Include="Sharp3D\Math\Core\Vector4F.cs" />
+    <Compile Include="Sharp3D\Math\Core\Vector4FArrayList.cs" />
+    <Compile Include="Sharp3D\Math\Geometry2D\AxisAlignedBox.cs" />
+    <Compile Include="Sharp3D\Math\Geometry2D\Circle.cs" />
+    <Compile Include="Sharp3D\Math\Geometry2D\OrientedBox.cs" />
+    <Compile Include="Sharp3D\Math\Geometry2D\Polygon.cs" />
+    <Compile Include="Sharp3D\Math\Geometry2D\Ray.cs" />
+    <Compile Include="Sharp3D\Math\Geometry3D\AxisAlignedBox.cs" />
+    <Compile Include="Sharp3D\Math\Geometry3D\OrientedBox.cs" />
+    <Compile Include="Sharp3D\Math\Geometry3D\Plane.cs" />
+    <Compile Include="Sharp3D\Math\Geometry3D\Polygon.cs" />
+    <Compile Include="Sharp3D\Math\Geometry3D\Ray.cs" />
+    <Compile Include="Sharp3D\Math\Geometry3D\Segment.cs" />
+    <Compile Include="Sharp3D\Math\Geometry3D\Sphere.cs" />
+    <Compile Include="Sharp3D\Math\Geometry3D\Triangle.cs" />
+    <Compile Include="SmartAssembly\AssemblyResolver\AssemblyResolver.cs" />
+    <Compile Include="SmartAssembly\AssemblyResolver\AssemblyResolverHelper.cs" />
+    <Compile Include="SmartAssembly\Attributes\ObfuscateControlFlowAttribute.cs" />
+    <Compile Include="SmartAssembly\Delegates\GetString.cs" />
+    <Compile Include="SmartAssembly\HouseOfCards\MemberRefsProxy.cs" />
+    <Compile Include="SmartAssembly\HouseOfCards\Strings.cs" />
+    <Compile Include="SmartAssembly\MemoryManagement\MemoryManager.cs" />
+    <Compile Include="SmartAssembly\ResourceResolver\ResourceResolver.cs" />
+    <Compile Include="SmartAssembly\StringsEncoding\DoNotMoveAttribute.cs" />
+    <Compile Include="SmartAssembly\StringsEncoding\DoNotPruneAttribute.cs" />
+    <Compile Include="SmartAssembly\StringsEncoding\Strings.cs" />
+    <Compile Include="SmartAssembly\Zip\AESCryptoIndirector.cs" />
+    <Compile Include="SmartAssembly\Zip\DESCryptoIndirector.cs" />
+    <Compile Include="SmartAssembly\Zip\DoNotEncodeStringsAttribute.cs" />
+    <Compile Include="SmartAssembly\Zip\SimpleZip.cs" />
+    <Compile Include="System\Collections\ObjectModel\ObservableDictionary.cs" />
+    <Compile Include="System\Collections\ObjectModel\ObservableStringDictionary.cs" />
+    <Compile Include="System\Collections\Specialized\INotifyDictionaryChanged.cs" />
+    <Compile Include="System\Collections\Specialized\INotifyDictionaryChanging.cs" />
+    <Compile Include="System\Collections\Specialized\NotifyDictionaryChangedEventArgs.cs" />
+    <Compile Include="System\Collections\Specialized\NotifyDictionaryChangingEventArgs.cs" />
+    <Compile Include="System\Data\SQLite\CollationEncodingEnum.cs" />
+    <Compile Include="System\Data\SQLite\CollationSequence.cs" />
+    <Compile Include="System\Data\SQLite\CollationTypeEnum.cs" />
+    <Compile Include="System\Data\SQLite\CommitEventArgs.cs" />
+    <Compile Include="System\Data\SQLite\FunctionType.cs" />
+    <Compile Include="System\Data\SQLite\ISQLiteSchemaExtensions.cs" />
+    <Compile Include="System\Data\SQLite\SQLite3.cs" />
+    <Compile Include="System\Data\SQLite\SQLite3_UTF16.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteBase.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteCallback.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteCollation.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System\Data\SQLite\SQLiteCommandBuilder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System\Data\SQLite\SQLiteCommitCallback.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteCommitHandler.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System\Data\SQLite\SQLiteConnectionHandle.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteConnectionPool.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteConnectionStringBuilder.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteConvert.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteDataAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="System\Data\SQLite\SQLiteDataReader.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteDateFormats.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteEnlistment.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteErrorCode.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteException.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteFactory.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteFinalCallback.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteFunction.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteFunctionAttribute.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteFunctionEx.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteJournalModeEnum.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteKeyReader.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteMetaDataCollectionNames.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteOpenFlagsEnum.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteParameter.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteParameterCollection.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteRollbackCallback.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteStatement.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteStatementHandle.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteTransaction.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteType.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteTypeNames.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteUpdateCallback.cs" />
+    <Compile Include="System\Data\SQLite\SQLiteUpdateEventHandler.cs" />
+    <Compile Include="System\Data\SQLite\SR.Designer.cs">
+      <DependentUpon>SR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="System\Data\SQLite\SynchronizationModes.cs" />
+    <Compile Include="System\Data\SQLite\TypeAffinity.cs" />
+    <Compile Include="System\Data\SQLite\UnsafeNativeMethods.cs" />
+    <Compile Include="System\Data\SQLite\UpdateEventArgs.cs" />
+    <Compile Include="System\Data\SQLite\UpdateEventType.cs" />
+    <Compile Include="ThreadSafeControls\ThreadSafeListViewItem.cs" />
+    <Compile Include="ThreadSafeControls\ThreadSafeTreeNode.cs" />
+    <Compile Include="trksegType.cs" />
+    <Compile Include="trkType.cs" />
+    <Compile Include="VntNet\PowerSchemeSwitcher\AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VntNet\PowerSchemeSwitcher\AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VntNet\PowerSchemeSwitcher\AppContext.cs" />
+    <Compile Include="VntNet\PowerSchemeSwitcher\AutoUpdatePowerSchemeEngine.cs" />
+    <Compile Include="VntNet\PowerSchemeSwitcher\PowerLineHelper.cs" />
+    <Compile Include="VntNet\PowerSchemeSwitcher\PowerNotificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VntNet\PowerSchemeSwitcher\PowerNotificationForm.Designer.cs">
+      <DependentUpon>PowerNotificationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VntNet\PowerSchemeSwitcher\PowerPlanInfo.cs" />
+    <Compile Include="VntNet\PowerSchemeSwitcher\PowerSchemeHelper.cs" />
+    <Compile Include="VntNet\PowerSchemeSwitcher\PowerSettingChangeNotification.cs" />
+    <Compile Include="VntNet\PowerSchemeSwitcher\PowerSettingNotificationMsgFilter.cs" />
+    <Compile Include="VntNet\PowerSchemeSwitcher\Program.cs" />
+    <Compile Include="VntNet\PowerSchemeSwitcher\Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="VntNet\PowerSchemeSwitcher\Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="VntNet\PowerSchemeSwitcher\RegistryChangesNotificationHelper.cs" />
+    <Compile Include="VntNet\PowerSchemeSwitcher\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VntNet\PowerSchemeSwitcher\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VntNet\PowerSchemeSwitcher\SystemTryIcon.Designer.cs">
+      <DependentUpon>SystemTryIcon.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="wptType.cs" />
+    <Compile Include="XamlGeneratedNamespace\GeneratedInternalTypeHelper1.cs" />
+    <Compile Include="Zeptomoby\OrbitTools\DecayException.cs" />
+    <Compile Include="Zeptomoby\OrbitTools\PropagationException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Command\AddSatellite.resx">
+      <DependentUpon>AddSatellite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\AirOps.resx">
+      <DependentUpon>AirOps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\AttackTarget.resx">
+      <DependentUpon>AttackTarget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\BrowseScenarioPlatforms.resx">
+      <DependentUpon>BrowseScenarioPlatforms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\CampaignPlayWindow.resx">
+      <DependentUpon>CampaignPlayWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\ChooseSide.resx">
+      <DependentUpon>ChooseSide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\ConsoleWindow.resx">
+      <DependentUpon>ConsoleWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\DBViewer.resx">
+      <DependentUpon>DBViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\DockingOps.resx">
+      <DependentUpon>DockingOps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\DoctrineForm.resx">
+      <DependentUpon>DoctrineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\EditAC.resx">
+      <DependentUpon>EditAC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\EditAction.resx">
+      <DependentUpon>EditAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\EditBoats.resx">
+      <DependentUpon>EditBoats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\EditCondition.resx">
+      <DependentUpon>EditCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\EditEvent.resx">
+      <DependentUpon>EditEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\EditSpecialAction.resx">
+      <DependentUpon>EditSpecialAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\ExclusionZonesWindow.resx">
+      <DependentUpon>ExclusionZonesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\ListActions.resx">
+      <DependentUpon>ListActions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\ListConditions.resx">
+      <DependentUpon>ListConditions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\ListEvents.resx">
+      <DependentUpon>ListEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\ListSpecialActions.resx">
+      <DependentUpon>ListSpecialActions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\ListTriggers.resx">
+      <DependentUpon>ListTriggers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\LoadScenario.resx">
+      <DependentUpon>LoadScenario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\Magazines.resx">
+      <DependentUpon>Magazines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\MessageLogWindow.resx">
+      <DependentUpon>MessageLogWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\MissionEditor.resx">
+      <DependentUpon>MissionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\MonteCarloForm.resx">
+      <DependentUpon>MonteCarloForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\MultipleUnitSensors.resx">
+      <DependentUpon>MultipleUnitSensors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\NewMission.resx">
+      <DependentUpon>NewMission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\NoNavZonesWindow.resx">
+      <DependentUpon>NoNavZonesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\ORBAT.resx">
+      <DependentUpon>ORBAT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\Postures.resx">
+      <DependentUpon>Postures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\SatPredictionForm.resx">
+      <DependentUpon>SatPredictionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\SaveGroup.resx">
+      <DependentUpon>SaveGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\Sides.resx">
+      <DependentUpon>Sides.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\SpecialActionsForm.resx">
+      <DependentUpon>SpecialActionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\SteamUpdateScenarioForm.resx">
+      <DependentUpon>SteamUpdateScenarioForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\TankerPlanner.resx">
+      <DependentUpon>TankerPlanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\UnitFilter.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UnitFilter.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\UnitSensors.resx">
+      <DependentUpon>UnitSensors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command\WeaponsWindow.resx">
+      <DependentUpon>WeaponsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Command_Core\slaxml.lua" />
+    <EmbeddedResource Include="Newtonsoft.Json.Dynamic.snk" />
+    <EmbeddedResource Include="ns11\Class1994.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Class1994.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns15\Class670.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Class670.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns15\Class671.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Class671.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns15\Class836.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Class836.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns15\CommandTreeView.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommandTreeView.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns25\TopologyText.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TopologyText.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns32\Command.Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Command.Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns32\FlightPlanWaypoints.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FlightPlanWaypoints.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\AddMagazine.resx">
+      <DependentUpon>AddMagazine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\AreaEditor.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AreaEditor.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\CampaignEditorWindow.resx">
+      <DependentUpon>CampaignEditorWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\CampaignEnd.resx">
+      <DependentUpon>CampaignEnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\CampaignScenarioWindow.resx">
+      <DependentUpon>CampaignScenarioWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\CargoOps.resx">
+      <DependentUpon>CargoOps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\CustomLayersForm.resx">
+      <DependentUpon>CustomLayersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\DamageControlWindow.resx">
+      <DependentUpon>DamageControlWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\EditCargo.resx">
+      <DependentUpon>EditCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\EditTrigger.resx">
+      <DependentUpon>EditTrigger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\EmconControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmconControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\FlightPlanEditor.resx">
+      <DependentUpon>FlightPlanEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\FlightPlanErrors.resx">
+      <DependentUpon>FlightPlanErrors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\FlightPlans.resx">
+      <DependentUpon>FlightPlans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\FlightPlanTime.resx">
+      <DependentUpon>FlightPlanTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\Hotkeys.resx">
+      <DependentUpon>Hotkeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\InsufficientLicenseWindow.resx">
+      <DependentUpon>InsufficientLicenseWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\LoadScenarioAttachment.resx">
+      <DependentUpon>LoadScenarioAttachment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\PlatformComponentArcControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>PlatformComponentArcControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\ReadyAircraft.resx">
+      <DependentUpon>ReadyAircraft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\RealismDialog.resx">
+      <DependentUpon>RealismDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\ScenAttachmentsWindow.resx">
+      <DependentUpon>ScenAttachmentsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\SteamPublishScenarioForm.resx">
+      <DependentUpon>SteamPublishScenarioForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\TimeToReadyWindow.resx">
+      <DependentUpon>TimeToReadyWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns33\TitleAndDescription.resx">
+      <DependentUpon>TitleAndDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\AddMount.resx">
+      <DependentUpon>AddMount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\AddNewUnit.resx">
+      <DependentUpon>AddNewUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\AddSensor.resx">
+      <DependentUpon>AddSensor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\AddSide.resx">
+      <DependentUpon>AddSide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\AddWeaponRecord.resx">
+      <DependentUpon>AddWeaponRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\ContactReport.resx">
+      <DependentUpon>ContactReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\EditBriefing.resx">
+      <DependentUpon>EditBriefing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\EditWeather.resx">
+      <DependentUpon>EditWeather.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\Evaluation.resx">
+      <DependentUpon>Evaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\FixedFacilityOrientation.resx">
+      <DependentUpon>FixedFacilityOrientation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\FormationEditor.resx">
+      <DependentUpon>FormationEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\Form_QuickTurnaround.resx">
+      <DependentUpon>Form_QuickTurnaround.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\Form_SetFuelAndAirborneTime.resx">
+      <DependentUpon>Form_SetFuelAndAirborneTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\LoadGroup.resx">
+      <DependentUpon>LoadGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\LoadSaveProgress.resx">
+      <DependentUpon>LoadSaveProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\Losses.resx">
+      <DependentUpon>Losses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\MCMWindow.resx">
+      <DependentUpon>MCMWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\Migration.resx">
+      <DependentUpon>Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\MinefieldForm.resx">
+      <DependentUpon>MinefieldForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\NewMessageForm.resx">
+      <DependentUpon>NewMessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\Options.resx">
+      <DependentUpon>Options.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\RecorderForm.resx">
+      <DependentUpon>RecorderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\RegressionTests.resx">
+      <DependentUpon>RegressionTests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\RenameObject.resx">
+      <DependentUpon>RenameObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\RenameSide.resx">
+      <DependentUpon>RenameSide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\ResumeFromSave.resx">
+      <DependentUpon>ResumeFromSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\ScenarioTitle.resx">
+      <DependentUpon>ScenarioTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\ScoringWindow.resx">
+      <DependentUpon>ScoringWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\SelectLoadout.resx">
+      <DependentUpon>SelectLoadout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\SpeedAlt.resx">
+      <DependentUpon>SpeedAlt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\StartGame.resx">
+      <DependentUpon>StartGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\TimesAndDuration.resx">
+      <DependentUpon>TimesAndDuration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns34\VideoWindow.resx">
+      <DependentUpon>VideoWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns35\MainSplash.resx">
+      <DependentUpon>MainSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ns6\WorldWindow.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>WorldWindow.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Salamander.Windows.Forms.CollapsiblePanel.bmp" />
+    <EmbeddedResource Include="Salamander.Windows.Forms.CollapsiblePanelBar.bmp" />
+    <EmbeddedResource Include="System\Data\SQLite\SQLiteCommand.bmp" />
+    <EmbeddedResource Include="System\Data\SQLite\SQLiteConnection.bmp" />
+    <EmbeddedResource Include="System\Data\SQLite\SQLiteDataAdapter.bmp" />
+    <EmbeddedResource Include="System\Data\SQLite\SR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VntNet\PowerSchemeSwitcher\AboutDialog.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VntNet\PowerSchemeSwitcher\PowerNotificationForm.resx">
+      <DependentUpon>PowerNotificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VntNet\PowerSchemeSwitcher\Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VntNet\PowerSchemeSwitcher\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VntNet\PowerSchemeSwitcher\SystemTryIcon.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SystemTryIcon.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AdvancedDataGridView\Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="app.manifest" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Command\My\MySettings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>MySettings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Command_Core\My\MySettings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>MySettings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DotSpatial\Serialization\Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="PathFinderApp\Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="VntNet\PowerSchemeSwitcher\Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="customcontrols\rightcolumn\fuelpanel_wpf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="customcontrols\rightcolumn\rightcolumnwpf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="customcontrols\rightcolumn\unitdoctrine_wpf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="customcontrols\rightcolumn\unitemcon_wpf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="customcontrols\rightcolumn\unitstatus_wpf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="customcontrols\rightcolumn\unitweapons_wpf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="forms\cargo\cargomissioncontrol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="forms\cargo\cargoopscontrol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="forms\cargo\editcargocontrol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="forms\licensing\licensetweaker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="forms\licensing\unlicensedfeatures.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="forms\mp\mp_connect_wpf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="forms\scenario\realismdialog\realismdialogcontrol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="forms\scenario\scenariofeatures.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="wpf\commandwpfresourcedictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="changelog.txt" />
+    <Resource Include="Effects\grayscaleeffect.ps" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CommandX.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CommandX.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

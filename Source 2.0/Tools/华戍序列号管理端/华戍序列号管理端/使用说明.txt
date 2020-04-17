@@ -1,0 +1,2 @@
+﻿将此项目生成的EXE及.config文件放置于Command根目录下（与CommandXLicA.dat在同一级）
+执行此程序，将特征码告知华戍技术支持，从而获取授权码并输入，如果授权码正确，则CommandXLicA.dat将被改写。之后可正常启动Command程序。

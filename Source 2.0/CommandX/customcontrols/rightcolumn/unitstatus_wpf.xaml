@@ -1,0 +1,352 @@
+<UserControl
+	x:Class="Command.UnitStatus_WPF" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:Command"
+	ScrollViewer.VerticalScrollBarVisibility="Disabled"
+	SizeChanged="UnitStatus_WPF_SizeChanged">
+	<StackPanel
+		Name="StackPanel1"
+		VerticalAlignment="Top"
+		Height="Auto"
+		SizeChanged="StackPanel1_SizeChanged">
+		<Label
+			Name="Label_UnitName"
+			Content="作战单元名称"
+			FontSize="13"
+			FontWeight="Bold" />
+		<Image
+			Name="Image_UnitImage"
+			RenderOptions.BitmapScalingMode="HighQuality"
+			HorizontalAlignment="Stretch"
+			MaxHeight="250" />
+		<DockPanel>
+			<TextBlock
+				Name="TextBlock1"
+				TextWrapping="Wrap"
+				Padding="5"
+				Width="170">
+				<Hyperlink
+					Name="Hyperlink_UnitClass"
+					Click="Hyperlink_UnitClass_Click">
+					<TextBlock
+						Name="TextBlock_UnitClass" />
+				</Hyperlink>
+			</TextBlock>
+			<Label
+				Name="Label_UnitProficiency"
+				Content="训练水平"
+				FontSize="13"
+				Width="80"
+				FontWeight="Bold" />
+		</DockPanel>
+		<Button
+			Name="Button_ContactReport"
+			Content="侦察报告..."
+			Margin="5"
+			Padding="3"
+			Focusable="False"
+			Click="Button_ContactReport_Click" />
+		<Expander
+			Name="Expander_GroupMembers"
+			FlowDirection="LeftToRight"
+			Header="编组构成:"
+			Margin="5"
+			Visibility="Collapsed"
+			Collapsed="Expander_GroupMembers_Collapsed"
+			Expanded="Expander_GroupMembers_Expanded">
+			<ListView
+				Name="ListView_GroupMembers"
+				ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+				BorderThickness="0"
+				SnapsToDevicePixels="True"
+				DisplayMemberPath="Text"
+				Width="300"
+				Background="{x:Null}"
+				SelectionChanged="ListView_GroupMembers_SelectionChanged">
+				<ListView.View>
+					<GridView>
+						<GridViewColumn
+							DisplayMemberBinding="{Binding Text}" />
+					</GridView>
+				</ListView.View>
+			</ListView>
+		</Expander>
+		<TextBlock
+			Name="TextBlock_Loadout"
+			Text="状态"
+			TextWrapping="Wrap"
+			Padding="5" />
+		<Label
+			Name="Label_UnitSide"
+			Content="推演方" />
+		<Label
+			Name="Label_UnitCourse"
+			Content="航向" />
+		<DockPanel
+			Name="DockPanel_UnitSpeed">
+			<TextBlock
+				TextWrapping="Wrap">
+				<Label
+					Name="Label_UnitSpeed"
+					Content="航速" />
+			</TextBlock>
+			<CheckBox
+				Name="CB_SpeedOverride"
+				Content="手动"
+				Margin="5"
+				IsChecked="True"
+				Focusable="False"
+				Unchecked="CB_SpeedOverride_Unchecked" />
+			<TextBlock
+				Name="TB_SpeedOverride"
+				Margin="5">(自动)</TextBlock>
+		</DockPanel>
+		<DockPanel
+			Name="DockPanel_UnitAlt">
+			<Label
+				Name="Label_UnitAlt"
+				Content="高度/深度" />
+			<CheckBox
+				Name="CB_AltitudeOverride"
+				Content="手动"
+				Margin="5"
+				IsChecked="True"
+				Focusable="False"
+				Unchecked="CB_AltitudeOverride_Unchecked" />
+			<TextBlock
+				Name="TB_AltitudeOverride"
+				Margin="5">(自动)</TextBlock>
+		</DockPanel>
+		<DockPanel
+			Name="DockPanel_GroupLeadSlowDown">
+			<CheckBox
+				Name="CB_GroupLeadSlowDown"
+				Content="编队指挥舰减速"
+				Margin="5"
+				IsChecked="True"
+				Focusable="False"
+				Click="CB_GroupLeadSlowDown_Click" />
+		</DockPanel>
+		<DockPanel
+			Name="Dockpanel_Damage"
+			LastChildFill="False">
+			<TextBlock
+				Text="毁伤:"
+				TextWrapping="Wrap"
+				Padding="5 5 0 0"
+				VerticalAlignment="Center" />
+			<TextBlock
+				Name="Label_UnitDamage"
+				Text=" "
+				TextWrapping="Wrap"
+				Padding="5 5 0 0"
+				VerticalAlignment="Center"
+				FontWeight="ExtraBold" />
+			<Button
+				Name="Button_Damage"
+				DockPanel.Dock="Right"
+				Content="损管"
+				Margin="5"
+				Width="80"
+				Padding="3"
+				OverridesDefaultStyle="False"
+				Focusable="False"
+				Click="Button_Damage_Click" />
+		</DockPanel>
+		<DockPanel
+			Name="Dockpanel_ComponentStatus">
+			<Label>系统:</Label>
+			<DockPanel
+				Width="190"
+				HorizontalAlignment="Right"
+				Margin="0,0,5,0">
+				<ProgressBar
+					Name="PB_ComponentsDestroyed"
+					Foreground="#FFFF0000"
+					Value="100"
+					Width="0"
+					Margin="5,5,0,5"
+					HorizontalAlignment="Right" />
+				<ProgressBar
+					Name="PB_ComponentsHeavyDamage"
+					Foreground="#FFFF4500"
+					Value="100"
+					Width="0"
+					Margin="0,5"
+					HorizontalAlignment="Right" />
+				<ProgressBar
+					Name="PB_ComponentsMediumDamage"
+					Foreground="#FFFFA500"
+					Value="100"
+					Width="0"
+					Margin="0,5"
+					HorizontalAlignment="Right" />
+				<ProgressBar
+					Name="PB_ComponentsLightDamage"
+					Foreground="#FFFFFF00"
+					Value="100"
+					Width="0"
+					Margin="0,5"
+					HorizontalAlignment="Right" />
+				<ProgressBar
+					Name="PB_ComponentsOK"
+					Foreground="#FF008000"
+					Value="100"
+					Width="0"
+					Margin="0,5"
+					HorizontalAlignment="Right" />
+			</DockPanel>
+		</DockPanel>
+		<DockPanel
+			Name="Dockpanel_FireDamage">
+			<Label
+				Name="Label_FireDamage"
+				Content="失火:   "
+				Foreground="#FFFF0000" />
+			<ProgressBar
+				Name="PB_FireDamage"
+				Margin="5"
+				Foreground="#FFFF0000" />
+		</DockPanel>
+		<DockPanel
+			Name="Dockpanel_FloodDamage">
+			<Label
+				Name="Label_FloodDamage"
+				Content="进水:"
+				Foreground="#FF0000FF" />
+			<ProgressBar
+				Name="PB_FloodDamage"
+				Margin="5"
+				Foreground="#FF0000FF" />
+		</DockPanel>
+		<DockPanel
+			LastChildFill="False">
+			<Button
+				Name="Button_MCM"
+				Content="反水雷装备"
+				OverridesDefaultStyle="False"
+				Margin="5"
+				Padding="3"
+				Width="100"
+				Focusable="False"
+				Click="Button_MCM_Click" />
+			<Button
+				Name="Button_CargoOps"
+				Content="货物"
+				OverridesDefaultStyle="False"
+				Margin="5"
+				Padding="3"
+				Focusable="False"
+				Visibility="Hidden"
+				Click="Button_CargoOps_Click" />
+			<Button
+				Name="Button_Magazines"
+				DockPanel.Dock="Right"
+				Content="弹药库"
+				Margin="5"
+				Width="80"
+				Padding="3"
+				OverridesDefaultStyle="False"
+				Focusable="False"
+				Click="Button_Magazines_Click" />
+		</DockPanel>
+		<DockPanel
+			Name="Dockpanel_Ops"
+			LastChildFill="False">
+			<Button
+				Name="Button_DockOps"
+				Content="载艇: 0/0"
+				OverridesDefaultStyle="False"
+				Margin="5"
+				Padding="3"
+				Focusable="False"
+				Click="Button_DockOps_Click" />
+			<Button
+				Name="Button_AirOps"
+				Content="载机: 0/0"
+				Margin="5"
+				Padding="3"
+				OverridesDefaultStyle="False"
+				Focusable="False"
+				DockPanel.Dock="Right"
+				Click="Button_AirOps_Click" />
+		</DockPanel>
+		<DockPanel
+			Name="DockPanel_AssignedHost">
+			<TextBlock
+				Name="TextBlock_AssignedHost"
+				Text="当前基地"
+				TextWrapping="Wrap"
+				Padding="5" />
+		</DockPanel>
+		<DockPanel
+			Name="DockPanel_Mission">
+			<Label
+				Name="Label_Mission"
+				Content="作战任务:" />
+			<TextBlock
+				Name="TextBlock_Mission"
+				TextWrapping="Wrap"
+				Padding="5">
+				<Hyperlink
+					Name="Hyperlink_Mission"
+					Click="Hyperlink_Mission_Click">
+					<TextBlock
+						Name="TextBlock_MissionName" />
+				</Hyperlink>
+			</TextBlock>
+		</DockPanel>
+		<DockPanel
+			Name="DockPanel_Status">
+			<TextBlock
+				Name="TextBlock_UnitStatus"
+				Text="任务状态"
+				TextWrapping="Wrap"
+				Padding="5" />
+		</DockPanel>
+		<Expander
+			Name="Expander_TankerClients"
+			FlowDirection="LeftToRight"
+			Header="加油队列:"
+			Margin="5"
+			Visibility="Collapsed"
+			Collapsed="Expander_TankerClients_Collapsed"
+			Expanded="Expander_TankerClients_Expanded">
+			<ListView
+				Name="ListView_TankerClients"
+				ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+				BorderThickness="0"
+				SnapsToDevicePixels="True"
+				Background="{x:Null}">
+				<ListView.View>
+					<GridView>
+						
+						<GridViewColumn
+							DisplayMemberBinding="{Binding Text}" />
+					</GridView>
+				</ListView.View>
+			</ListView>
+		</Expander>
+		<DockPanel
+			Name="DockPanel_SensorsWeapons"
+			LastChildFill="False">
+			<Button
+				Name="Button_Sensors"
+				Content="探测器"
+				Margin="5"
+				Width="80"
+				Padding="3"
+				OverridesDefaultStyle="False"
+				Focusable="False"
+				Click="Button_Sensors_Click" />
+			<Button
+				Name="Button_Weapons"
+				DockPanel.Dock="Right"
+				Content="武器"
+				Margin="5"
+				Width="80"
+				Padding="3"
+				OverridesDefaultStyle="False"
+				Focusable="False"
+				Click="Button_Weapons_Click" />
+		</DockPanel>
+	</StackPanel>
+</UserControl>

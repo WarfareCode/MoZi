@@ -1,0 +1,98 @@
+<!--类 'Command.UnitEMCON_WPF' 有 IComponentConnector.Connect 方法，但无法解析。-->
+<UserControl
+	x:Class="Command.UnitEMCON_WPF" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:Command">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<Style
+				TargetType="{x:Type ToggleButton}"
+				x:Key="{x:Type ToggleButton}">
+				<Style.Triggers>
+					<Trigger
+						Property="ToggleButton.IsChecked"
+						Value="True">
+						<Setter
+							Property="Background">
+							<Setter.Value>
+								<LinearGradientBrush
+									EndPoint="0,1"
+									StartPoint="0,0">
+									<GradientStop
+										Color="#FFF3F3F3"
+										Offset="1" />
+									<GradientStop
+										Color="LawnGreen"
+										Offset="0.307" />
+								</LinearGradientBrush>
+							</Setter.Value>
+						</Setter>
+					</Trigger>
+				</Style.Triggers>
+			</Style>
+			<BooleanToVisibilityConverter
+				x:Key="BooleanToVisibilityConverter" />
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<StackPanel>
+		<Button
+			Margin="3"
+			Command="{Binding EMCONWindowCommand}">电磁管控面板(Ctrl + F9)</Button>
+		<Button
+			Margin="3"
+			Command="{Binding SensorsWindowCommand}">传感器面板(F9)</Button>
+		<CheckBox
+			Margin="3"
+			IsChecked="{Binding Inherit.Value}"
+			Command="{Binding UpdateEMCONCommand}">与上级保持一致</CheckBox>
+		<Grid
+			IsEnabled="{Binding ObeysEMCON.Value}">
+			<Grid
+				IsEnabled="{Binding Inherit.Invert}">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition />
+					<ColumnDefinition />
+					<ColumnDefinition />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+				</Grid.RowDefinitions>
+				<Label>雷达</Label>
+				<Label
+					Grid.Row="1">声纳</Label>
+				<Label
+					Grid.Row="2">干扰机</Label>
+				<ToggleButton
+					Grid.Row="0"
+					Grid.Column="1"
+					Command="{Binding UpdateEMCONCommand}"
+					IsChecked="{Binding RadarActive.Value}">打开</ToggleButton>
+				<ToggleButton
+					Grid.Row="0"
+					Grid.Column="2"
+					Command="{Binding UpdateEMCONCommand}"
+					IsChecked="{Binding RadarActive.Invert}">静默</ToggleButton>
+				<ToggleButton
+					Grid.Row="1"
+					Grid.Column="1"
+					Command="{Binding UpdateEMCONCommand}"
+					IsChecked="{Binding SonarActive.Value}">打开</ToggleButton>
+				<ToggleButton
+					Grid.Row="1"
+					Grid.Column="2"
+					Command="{Binding UpdateEMCONCommand}"
+					IsChecked="{Binding SonarActive.Invert}">静默</ToggleButton>
+				<ToggleButton
+					Grid.Row="2"
+					Grid.Column="1"
+					Command="{Binding UpdateEMCONCommand}"
+					IsChecked="{Binding OECMActive.Value}">打开</ToggleButton>
+				<ToggleButton
+					Grid.Row="2"
+					Grid.Column="2"
+					Command="{Binding UpdateEMCONCommand}"
+					IsChecked="{Binding OECMActive.Invert}">静默</ToggleButton>
+			</Grid>
+		</Grid>
+	</StackPanel>
+</UserControl>

@@ -1,0 +1,90 @@
+<!--类 'Command.EditCargoControl' 有 IComponentConnector.Connect 方法，但无法解析。-->
+<UserControl
+	x:Class="Command.EditCargoControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid" xmlns:local="clr-namespace:Command">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary
+					Source="pack://application:,,,/CommandX;Component/WPF/CommandWPFResourceDictionary.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="150" />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="auto" />
+			<RowDefinition
+				Height="*" />
+			<RowDefinition
+				Height="auto" />
+		</Grid.RowDefinitions>
+		<Grid
+			Column="1"
+			Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="auto" />
+				<RowDefinition
+					Height="*" />
+			</Grid.RowDefinitions>
+			<Label>要添加的货物:</Label>
+			<DataGrid
+				Name="MyDataGrid"
+				Grid.Row="1"
+				IsReadOnly="True"
+				SelectionUnit="FullRow"
+				ItemsSource="{Binding AllMounts}"
+				SelectedItem="{Binding SelectedMountToAdd, Mode=TwoWay}" />
+		</Grid>
+		<Grid
+			Column="0"
+			Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="auto" />
+				<RowDefinition
+					Height="*" />
+				<RowDefinition
+					Height="auto" />
+			</Grid.RowDefinitions>
+			<Label>当前货物</Label>
+			<ListView
+				Grid.Row="1"
+				DisplayMemberPath="Name"
+				ItemsSource="{Binding Inventory}"
+				SelectedItem="{Binding SelectedCargoToRemove, Mode=TwoWay}" />
+		</Grid>
+		<StackPanel
+			Orientation="Horizontal"
+			Grid.Row="2">
+			<Button
+				Command="{Binding AddCargoCommand}">添加</Button>
+			<xctk:IntegerUpDown
+				Increment="1"
+				Minimum="1"
+				Maximum="100"
+				Value="{Binding Quantity, Mode=TwoWay}" />
+			<Button
+				Command="{Binding RemoveCargoCommand}">删除</Button>
+		</StackPanel>
+		<StackPanel
+			Grid.Row="2"
+			Grid.Column="1"
+			Orientation="Horizontal"
+			HorizontalAlignment="Right">
+			<Label
+				Foreground="#FFFF0000"
+				VerticalAlignment="Center"
+				Content="{Binding LastError, FallbackValue=LastError}" />
+			<Button
+				Command="{Binding CancelCommand}">取消</Button>
+			<Button
+				Command="{Binding OKCommand}">确认</Button>
+		</StackPanel>
+	</Grid>
+</UserControl>
